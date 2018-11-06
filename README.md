@@ -1,6 +1,6 @@
 # smarGate
 A mobile gateway that exposes the intranet service points. <br>
-Free, after testing, select machine and open source. <br>
+Free, after testing will be open source. <br>
 It contains a Android client app and server program.<br>
 Usage:<br>
 1、download android client app<br>
