@@ -4,7 +4,7 @@ Free, after testing will be open source. <br>
 It contains a Android client app and server program.<br>
 Usage:<br>
 ## 1、download android client app<br>
-## 2、register user<br>
+## 2、register user（the invitation code must be numeric and can be filled with any value）<br>
 ![login](https://github.com/lazy-luo/smarGate/blob/master/res/login.png)<br>
 ![register](https://github.com/lazy-luo/smarGate/blob/master/res/register.png)<br>
 ## 3、remember register key-number(N)<br>
