@@ -5,13 +5,13 @@ It contains a Android client app and server program.<br>
 Usage:<br>
 1、download android client app<br>
 2、register user<br>
-![image](https://github.com/lazy-luo/smarGate/blob/master/res/login.png)<br>
-![image](https://github.com/lazy-luo/smarGate/blob/master/res/register.png)<br>
+![login](https://github.com/lazy-luo/smarGate/blob/master/res/login.png)<br>
+![register](https://github.com/lazy-luo/smarGate/blob/master/res/register.png)<br>
 3、remember register key-number(N)<br>
-![image](https://github.com/lazy-luo/smarGate/blob/master/res/registerok.png)<br>
+![register result](https://github.com/lazy-luo/smarGate/blob/master/res/registerok.png)<br>
 4、download server program matched you serverOS<br>
 5、modify config file(conf-proxy.xml):<br>
-  <?xml version="1.0" encoding="GBK"?>
+  <p><?xml version="1.0" encoding="GBK"?>
     <app-config code="PROXY" name="proxy-server">
        <moudle-parameter>
         <log-level value="LOG_ERROR"/>
@@ -21,13 +21,13 @@ Usage:<br>
         <server-address value="visery.net:39001"/>
         <user-audit value="N:index"/><!-- need modify (N is step 3 return,index is you service point order. EXP:[12345:1])-->
     </moudle-parameter>
-  </app-config>
+  </app-config></p>
 6、excute shell "nohup ./proxy_server -i1000 -o1000 -w8 >/dev/null &"(parameter i:input connections,o:output connections,w:max threads)<br>
 7、login from android client app<br>
-![image](https://github.com/lazy-luo/smarGate/blob/master/res/oper1.png)<br>
+![operator](https://github.com/lazy-luo/smarGate/blob/master/res/oper1.png)<br>
 8、create service local proxy in android app<br>
-![image](https://github.com/lazy-luo/smarGate/blob/master/res/oper2.png)<br>
-![image](https://github.com/lazy-luo/smarGate/blob/master/res/oper3.png)<br>
+![operator](https://github.com/lazy-luo/smarGate/blob/master/res/oper2.png)<br>
+![operator](https://github.com/lazy-luo/smarGate/blob/master/res/oper3.png)<br>
 9、enjoy it！<br>
 ps:<br>
 The Linux 64 bit version does dependless any third party package.<br>
