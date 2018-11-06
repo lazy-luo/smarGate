@@ -11,7 +11,8 @@ Usage:<br>
 ![register result](https://github.com/lazy-luo/smarGate/blob/master/res/registerok.png)<br>
 4、download server program matched you serverOS<br>
 5、modify config file(conf-proxy.xml):<br>
-  <p><?xml version="1.0" encoding="GBK"?>
+```
+  <?xml version="1.0" encoding="GBK"?>
     <app-config code="PROXY" name="proxy-server">
        <moudle-parameter>
         <log-level value="LOG_ERROR"/>
@@ -21,7 +22,8 @@ Usage:<br>
         <server-address value="visery.net:39001"/>
         <user-audit value="N:index"/><!-- need modify (N is step 3 return,index is you service point order. EXP:[12345:1])-->
     </moudle-parameter>
-  </app-config></p>
+  </app-config>
+```
 6、excute shell "nohup ./proxy_server -i1000 -o1000 -w8 >/dev/null &"(parameter i:input connections,o:output connections,w:max threads)<br>
 7、login from android client app<br>
 ![operator](https://github.com/lazy-luo/smarGate/blob/master/res/oper1.png)<br>
