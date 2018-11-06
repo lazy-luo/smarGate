@@ -34,3 +34,11 @@ Usage:<br>
 # ps:<br>
 The Linux 64 bit version does dependless any third party package.<br>
 NAS arm version relies on OpenSSL, which requires OpenSSL to be installed before.<br>
+Androdi Client app requires permission:<br>
+1、background running privileges<br>
+2、network access<br>
+Cell phone settings (Android):<br>
+1、setting -> wireless and network -> WLAN -> maintain WLAN connections in dormant state  "ALLOW"<br>
+2、setting -> wireless and network -> mobile network -> advanced ->always connected network data service "ALLOW"<br>
+
+
