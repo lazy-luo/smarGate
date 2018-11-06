@@ -23,3 +23,6 @@ Usage:<br>
 7、login from android client app<br>
 8、create service local proxy in android app<br>
 9、enjoy it！<br>
+ps:<br>
+The Linux 64 bit version does not rely on the third party installation package.<br>
+NAS arm version relies on OpenSSL, which requires OpenSSL to be installed in advance.<br>
