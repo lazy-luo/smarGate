@@ -20,7 +20,7 @@ Usage:<br>
         <app-name value="xxxxx [name of service points]." /><!-- need modify -->
         <app-description value="yyyyy [description of service points]" /><!-- need modify -->
         <server-address value="visery.net:39001"/>
-        <user-audit value="N:index"/><!-- need modify (N is step 3 return,index is you service point order. EXP:[12345:1])-->
+        <user-audit value="N:index"/><!-- need modify (N is step 3 return,index is you service point order. e.g:[12345:1])-->
     </moudle-parameter>
   </app-config>
 ```
