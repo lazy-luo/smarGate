@@ -1,4 +1,4 @@
-# [smarGate]() | [移动网关](https://github.com/lazy-luo/smarGate/readme.cn.md)
+# smarGate | [移动网关](https://github.com/lazy-luo/smarGate/blob/master/readme.cn.md)
 
 A mobile gateway that exposes the intranet service points. <br>
 Free, after testing will be open source. <br>
@@ -35,7 +35,7 @@ Usage:<br>
 ## ps:<br>
 * The Linux x86 or x86_64 bit version does dependless any third party package.<br>
 * NAS armv7 version relies on OpenSSL, which requires OpenSSL to be installed before.<br>
-* Androdi Client app requires permission:<br>
+* Android Client app requires permission:<br>
 >> 1、background running privileges<br>
 >> 2、network access<br>
 * Cell phone settings (Android):<br>
