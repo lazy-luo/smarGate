@@ -45,6 +45,6 @@
 >> 2、设置 -> 无线及网络 -> 移动网络 -> 高级 ->始终保持数据连接 "允许"<br>
 
 Q：如何下载安装 android app？<br>
-  1、用android手机浏览器打开 https://github.com/lazy-luo/smarGate/raw/master/app-release.apk
-  2、弹出框中下载安装
+  1、用android手机浏览器打开 https://github.com/lazy-luo/smarGate/raw/master/app-release.apk <br>
+  2、弹出框中下载安装 <br>
 
