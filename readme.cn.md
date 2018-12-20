@@ -75,4 +75,4 @@ Q：如何下载安装 android app？<br>
   
   附网盘下载地址： https://pan.baidu.com/s/14Iq60kxHW711NVoCVKWySg <br>
 
-  如有需要请添加微信：ws_lzy008 注明：smarGate ，视情况组件技术讨论群<br>
+  如有需要请添加微信：ws_lzy008 注明：smarGate ，视情况组建技术讨论群<br>
