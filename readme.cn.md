@@ -30,13 +30,13 @@
 >> * 客户端采用webview控件，在android下启动时内存占用较多，后续版本计划用native界面，预计内存占用可降低到50m左右
 
 ## 使用指南:<br>
-### 1、下载android客户端（app-release.apk）<br>
+### 1、下载android客户端（app-release.apk）支持armv7及arm64 cpu架构<br>
 ### 2、注册新用户（邀请码必填，为数字，可任意填）<br>
 ![login](https://github.com/lazy-luo/smarGate/blob/master/res/login.png)<br>
 ![register](https://github.com/lazy-luo/smarGate/blob/master/res/register.png)<br>
 ### 3、注册成功后请务必记住返回的服务ID(N)<br>
 ![register result](https://github.com/lazy-luo/smarGate/blob/master/res/registerok.png)<br>
-### 4、下载内网服务器适合的服务端版本（目前支持linux-x86-32/64，及linux-arm【树莓派、群晖】）<br>
+### 4、下载内网服务器适合的服务端版本（目前支持linux-x86-32/64，windows，及linux-arm【树莓派、群晖】）<br>
 ### 5、解压服务端压缩包，修改配置文件(conf-proxy.xml):<br>
 ```
   <?xml version="1.0" encoding="GBK"?>
@@ -60,8 +60,7 @@
 ![operator](https://github.com/lazy-luo/smarGate/blob/master/res/oper3.png)<br>
 ### 9、电脑或手机可以直接访问手机客户端设置的服务（如ssh、http等）<br>
 ## 补充说明:<br>
-* Linux x86 或 x86_64 位版本已经打包了依赖，开箱即用.<br>
-* Linux armv 版本依赖 OpenSSL, 必须确保先安装OpenSSL，且能找到libssl.so及libcrypto.so库(注意，OpenSSL库命名).<br>
+* 所有版本已经打包了依赖，开箱即用.<br>
 * Android 客户端需要权限:<br>
 >> 1、后台执行权限（如果不允许，则app进入后台会断开连接）<br>
 >> 2、网络访问权限（基本权限）<br>
