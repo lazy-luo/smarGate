@@ -33,8 +33,7 @@ Usage:<br>
 ![operator](https://github.com/lazy-luo/smarGate/blob/master/res/oper3.png)<br>
 ### 9、enjoy it！<br>
 ## ps:<br>
-* The Linux x86 or x86_64 bit version does dependless any third party package.<br>
-* NAS armv7 version relies on OpenSSL, which requires OpenSSL to be installed before.<br>
+* The server does dependless any third party package.<br>
 * Android Client app requires permission:<br>
 >> 1、background running privileges<br>
 >> 2、network access<br>
