@@ -22,7 +22,34 @@
 ## samrGate有什么技术特点？<br>
 >> * 支持代理穿透<br>
 >>>> * 官方提供免费的代理服务器<br>
->>>> * <I>如果自己有云服务器（具备公网ip），用户可自定义自己的代理服务器，且在代理服务器上安装proxy。所有数据传输走用户配置的代理服务器（为了防止中间人攻击，代理服务器需要用户生成自签名证书）---后续版本支持</I><br>
+>>>> * <I>如果自己有云服务器（具备公网ip），用户可自定义自己的代理服务器，且在代理服务器上安装proxy_server。所有数据传输走用户配置的代理服务器（为了防止中间人攻击，代理服务器需要用户生成自签名证书）---已支持</I> 。“代理服务器”配置如下：<br>
+```
+  <?xml version="1.0" encoding="GBK"?>
+    <app-config code="PROXY" name="proxy-server">
+        <app-parameter>
+	        <proxy-service-port value="9001"/><!--自定义代理端口 -->
+          <!-- 如果自己有证书及私钥，则配置如下项，启动安全的SSL通道，其中文件名需要配置正确；没有证书则不需要配置，启用普通tcp连接
+	        <ssl-cacert-file value="xxx.crt"/>
+	        <ssl-privatekey-file value="xxx.key"/>
+          -->
+       </app-parameter>
+       <moudle-parameter>
+        <log-level value="LOG_ERROR"/>
+        <log-write-mode value="CONSOLE_ONLY"/>
+        <server-address value="visery.net:39001"/>
+        <user-audit value="N:0"/><!-- need modify (N 为注册成功返回的服务ID，index为自定义的服务端实例序号，建议从1开始，不能重复. 例如:[12345:1])-->
+      </moudle-parameter>
+  </app-config>
+```
+>>>> 服务端中增加如下配置：
+```
+......
+    <moudle-parameter>
+      ......
+      <!-- 配置上述代理服务器的ip或域名：端口，注意：ip必须为公网IP -->
+      <channel address="xxx.xxx.xxx.xxx:9001" ssl="false" />
+    </moudle-parameter>
+```
 >> * 支持p2p通道<br>
 >>>> * 使用TCP协议进行p2p穿透，提升安全性<br>
 >>>> * 不是所有的网络都支持p2p，取决于两端NAT类型
