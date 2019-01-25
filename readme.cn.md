@@ -2,6 +2,7 @@
 
 提供内网穿透能力，通过加密隧道，能安全的将内网服务暴露出来. <br>
 支持p2p通讯（p2p通道可用时显示为绿色）<br>
+支持自定义代理服务器 <br>
 免费，测试稳定后考虑开源. <br>
 包含一个android客户端和需内网安装的服务端.<br>
 ## samrGate是什么？<br>
@@ -22,7 +23,7 @@
 ## samrGate有什么技术特点？<br>
 >> * 支持代理穿透<br>
 >>>> * 官方提供免费的代理服务器<br>
->>>> * <I>如果自己有云服务器（具备公网ip），用户可自定义自己的代理服务器，且在代理服务器上安装proxy_server。所有数据传输走用户配置的代理服务器（为了防止中间人攻击，代理服务器需要用户生成自签名证书）---已支持</I> 。“代理服务器”配置如下：<br>
+>>>> * <I>如果自己有云服务器（具备公网ip），用户可自定义自己的代理服务器，且在代理服务器上安装proxy_server。所有数据传输走用户配置的代理服务器（为了防止中间人攻击，代理服务器需要用户生成自签名证书）</I> 。“代理服务器”配置如下：<br>
 ```
   <?xml version="1.0" encoding="GBK"?>
     <app-config code="PROXY" name="proxy-server">
@@ -37,7 +38,7 @@
         <log-level value="LOG_ERROR"/>
         <log-write-mode value="CONSOLE_ONLY"/>
         <server-address value="visery.net:39001"/>
-        <user-audit value="N:0"/><!-- need modify (N 为注册成功返回的服务ID，index为自定义的服务端实例序号，建议从1开始，不能重复. 例如:[12345:1])-->
+        <user-audit value="N:0"/><!-- need modify (N 为注册成功返回的服务ID，index为自定义的服务端实例序号，取0-->
       </moudle-parameter>
   </app-config>
 ```
@@ -46,7 +47,7 @@
 ......
     <moudle-parameter>
       ......
-      <!-- 配置上述代理服务器的ip或域名：端口，注意：ip必须为公网IP -->
+      <!-- 配置上述代理服务器的ip或域名+端口，注意：ip必须为公网IP。ssl选项必须配置正确，如果代理服务器有证书且生效则配置为true否则为false -->
       <channel address="xxx.xxx.xxx.xxx:9001" ssl="false" />
     </moudle-parameter>
 ```
