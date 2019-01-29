@@ -37,8 +37,6 @@
        <moudle-parameter>
         <log-level value="LOG_ERROR"/>
         <log-write-mode value="CONSOLE_ONLY"/>
-        <server-address value="visery.net:39001"/>
-        <user-audit value="N:0"/><!-- need modify (N 为注册成功返回的服务ID，index为自定义的服务端实例序号，取0-->
       </moudle-parameter>
   </app-config>
 ```
