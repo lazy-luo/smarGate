@@ -57,7 +57,7 @@
 
 ## 使用指南:<br>
 ### 1、下载android客户端（app-release.apk）支持armv7及arm64 cpu架构<br>
-### 2、注册新用户（邀请码必填，为数字，可任意填）<br>
+### 2、注册新用户（邀请码必填，为数字，可任意填。ps：如果信息未填完整，部分用户反馈会注册失败）<br>
 ![login](https://github.com/lazy-luo/smarGate/blob/master/res/login.png)<br>
 ![register](https://github.com/lazy-luo/smarGate/blob/master/res/register.png)<br>
 ### 3、注册成功后请务必记住返回的服务ID(N)<br>
