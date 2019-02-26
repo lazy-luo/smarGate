@@ -1,4 +1,4 @@
-# 中文 | [English](https://github.com/lazy-luo/smarGate/blob/master/readme.en.md)
+# 中文 | [English](https://github.com/lazy-luo/smarGate/blob/master/README_en.md)
 
 # 移动网关
 
