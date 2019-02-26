@@ -1,4 +1,3 @@
-# English | [中文](https://github.com/lazy-luo/smarGate/blob/master/readme.cn.md)
 
 A mobile gateway that exposes the intranet service points. <br>
 Free, after testing will be open source. <br>
