@@ -1,3 +1,5 @@
+# 中文 | [English](https://github.com/lazy-luo/smarGate/blob/master/readme.en.md)
+
 # 移动网关
 
 提供内网穿透能力，通过加密隧道，能安全的将内网服务暴露出来. <br>
