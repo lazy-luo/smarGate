@@ -99,7 +99,7 @@
 Q：如何下载安装 android app？<br>
   1、用android手机浏览器打开 https://github.com/lazy-luo/smarGate/raw/master/app-release.apk <br>
   2、弹出框中下载安装 <br>
-  
+  网盘链接为最新版本，github上版本稍有滞后 <br>
   附网盘下载地址： https://pan.baidu.com/s/14Iq60kxHW711NVoCVKWySg <br>
 
   如有需要请添加微信：ws_lzy008 注明：smarGate ，视情况组建技术讨论群<br>
