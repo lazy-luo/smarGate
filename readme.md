@@ -77,7 +77,6 @@
         <log-write-mode value="CONSOLE_ONLY"/>
         <app-name value="xxxxx [name of service points]." /><!-- need modify -->
         <app-description value="yyyyy [description of service points]" /><!-- need modify -->
-        <server-address value="visery.net:39001"/>
         <user-audit value="N:index"/><!-- need modify (N 为注册成功返回的服务ID，index为自定义的服务端实例序号，建议从1开始，不能重复. 例如:[12345:1])-->
     </moudle-parameter>
   </app-config>
