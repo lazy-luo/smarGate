@@ -102,13 +102,28 @@
 >> 1、设置 -> 无线及网络 -> WLAN -> 系统休眠保持连接  "允许" （否则，系统休眠会被断连）<br>
 >> 2、设置 -> 无线及网络 -> 移动网络 -> 高级 ->始终保持数据连接 "允许"<br>
 
-Q：如何下载安装 android app？<br>
-  1、用android手机浏览器打开 https://github.com/lazy-luo/smarGate/raw/master/app-release.apk <br>
-  2、弹出框中下载安装 <br>
-  网盘链接为最新版本，github上版本稍有滞后 <br>
-  附网盘下载地址： https://pan.baidu.com/s/14Iq60kxHW711NVoCVKWySg <br>
+* Q：如何下载安装 android app？<br>
+  >> 1、用android手机浏览器打开 https://github.com/lazy-luo/smarGate/raw/master/app-release.apk <br>
+  >> 2、弹出框中下载安装 <br>
+  >> 网盘链接为最新测试版本，github上版本稍有滞后 <br>
+  >> 附网盘下载地址： https://pan.baidu.com/s/14Iq60kxHW711NVoCVKWySg <br>
 
-  如有需要请添加微信：ws_lzy008 注明：smarGate ，视情况组建技术讨论群<br>
+  >> 如有需要请添加微信：ws_lzy008 注明：smarGate ，视情况组建技术讨论群<br>
+* Q：为何有时连接不上？<br>
+   >> A：服务端空闲约2-3分钟，会自动断开，须等待10秒左右重连。<br>
+* Q：ipv6为何无法P2P？<br>
+   >> A：请将客户端及服务端更新到最新版本；确保手机与内网电脑能获取到全局ipv6地址；确保没被防火墙拦截（windows）；排查两个ipv6是否能路由出去。<br>
+* Q：IPv4及IPv6的P2P连接为何没有UDP端口？<br>
+   >> A：smarGate基于TCP协议进行P2P穿透，具备更好的安全性，及连接可靠性。<br>
+* Q：手机NAS客户端为何无法登录？<br>
+   >> A：确保手机NAS客户端ip黑名单中没有localhost（127.0.0.1）。<br>
+* Q：如何将异地公司内网机器共享给多地团队？<br>
+   >> A：手机连接wifi，让团队成员电脑连接手机IP：PORT，直接通过手机代理进行访问。实测，2k以上的手机，可以带上百人团队共享访问。<br>
+* Q：为何windows服务端没有控制台黑框？<br>
+   >> A：为了防止误操作关闭服务端，新版本windows服务端采用后台方式运行。如需关闭，请用“任务管理器”<br>
+* Q：P2P时流量是否还需要走中间代理？<br>
+   >> A：不需要，直接点对点连接，网速取决于你的客户端及服务端所在网络。<br>
+   
 ## 免责申明<br>  
 * 请您仔细阅读以下申明，您在使用smarGate工具软件，表明您对以下内容的接受：<br> 
   1、严禁使用本软件从事计算机黑客行为以及其他任何危害计算机信息网络安全的;<br> 
