@@ -151,5 +151,5 @@
 1、修复Raspbian jessie下无法检测IPv6的BUG<br>
 ### 2019-05-27更新到v0.18：<br>
 1、性能优化<br>
-2、提供ipv6 P2P开关机制：<ipv4-tunnel-first value="false"/> 如需关闭ipv6点对点则设置为“true”，默认值为“false”<br>
+2、提供ipv6 P2P开关机制：&lt;ipv4-tunnel-first value="false"/&gt; 如需关闭ipv6点对点则设置为“true”，默认值为“false”<br>
 3、增加客户端ipv6标志及连接状态提示<br>
