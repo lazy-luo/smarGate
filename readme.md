@@ -62,7 +62,8 @@
 >>>> * 不是所有的网络都支持p2p，取决于两端NAT类型
 >>>> * v0.14以上版本，直接支持ipv6，且能提供防火墙穿透
 ## 已知问题<br>
->> * 客户端采用webview控件，在android下启动时内存占用较多，后续版本计划用native界面，预计内存占用可降低到50m左右
+>> * 1、客户端采用webview控件，在android下启动时内存占用较多，后续版本计划用native界面，预计内存占用可降低到50m左右<br>
+>> * 2、部分机型android8.0下可能闪退，原因是webview版本BUG，可以尝试升级系统或升级webview组件<br>
 
 ## 使用指南:<br>
 ### 1、下载android客户端（app-release.apk）支持armv7及arm64 cpu架构<br>
