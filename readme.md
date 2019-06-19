@@ -166,5 +166,6 @@
 3、增加客户端ipv6标志及连接状态提示<br>
 ## 捐助<br>
 如果您觉得 smarGate 对你有帮助，欢迎给予我们一定的捐助来维持项目的长期发展！<br>
+ps：捐赠建议附上注册用户名<br>
 ### 微信<br>
 ![donation](https://github.com/lazy-luo/smarGate/blob/master/res/donation.png)<br>
