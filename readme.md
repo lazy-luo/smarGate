@@ -53,9 +53,9 @@
 ......
     <moudle-parameter>
       ......
-      <!-- 配置上述代理服务器的ip或域名+端口，注意：ip必须为公网IP。ssl选项必须配置正确，如果代理服务器有证书且生效则配置为true否则为false -->
-      <channel address="xxx.xxx.xxx.xxx:9001" ssl="false" />
     </moudle-parameter>
+    <!-- 配置上述代理服务器的ip或域名+端口，注意：ip必须为公网IP。ssl选项必须配置正确，如果代理服务器有证书且生效则配置为true否则为false -->
+    <channel address="xxx.xxx.xxx.xxx:9001" ssl="false" />
 ```
 * 支持p2p通道<br>
   * 使用TCP协议进行p2p穿透，提升安全性<br>
