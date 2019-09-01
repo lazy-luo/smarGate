@@ -138,6 +138,13 @@
    >> A：首选P2P连接，无P2P时使用自定义代理连接，无前两者连接时使用官方代理连接。<br>
 * Q: 同一个用户能否多处登录 ？<br>
    >> A: 可以多点登录，但同一时刻只能有一个客户端可以进行P2P；服务端单台机器只能启1个实例，服务端各实例配置确保序号不重复，否则将无法正常使用。<br>
+* Q: 客户端不同颜色表示啥意思？<br>
+   >> A:ipv4下P2P标识为：<br>
+   ![ipv4 p2p](https://github.com/lazy-luo/smarGate/blob/master/res/ipv4p2p.png)<br>
+   >> A:ipv6下P2P标识为：<br>
+   ![ipv6 p2p](https://github.com/lazy-luo/smarGate/blob/master/res/ipv6p2p.png)<br>
+   >> A:自定义路由标识为：<br>
+   ![userdefineproxyer p2p](https://github.com/lazy-luo/smarGate/blob/master/res/userdefineproxyer.png)<br>
    
 ## 最佳实践<br>  
 * 以下为推荐使用的最佳实践，供参考：<br> 
