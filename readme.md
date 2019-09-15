@@ -94,7 +94,7 @@
     </moudle-parameter>
   </app-config>
 ```
-### 6、执行命令： "nohup ./proxy_server -i1000 -o1000 -w8 >/dev/null &"(参数说明 i:最大接入连接数,o:最大接出连接数,w:最大线程数，执行命令前确保为 proxy_server 添加执行权限：chmod +x proxy_server )<br>
+### 6、linux下执行命令： "nohup ./proxy_server -i1000 -o1000 -w8 >/dev/null &"(参数说明 i:最大接入连接数,o:最大接出连接数,w:最大线程数，执行命令前确保为 proxy_server 添加执行权限：chmod +x proxy_server )；windows下执行命令：proxy_server -i1000 -o1000 -w8 <br>
 ### 7、使用注册时的用户名/密码登陆手机客户端<br>
 ![operator](https://github.com/lazy-luo/smarGate/blob/master/res/oper1.png)<br>
 ### 8、在客户端中可以看到上线的服务端，可以在客户端上定义端口反弹规则<br>
