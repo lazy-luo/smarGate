@@ -5,7 +5,7 @@
 
 # 移动网关
 * 无需公网IP，提供内网穿透能力，通过加密隧道，能安全的将内网服务暴露出来. <br>
-* 支持p2p通讯（p2p通道可用时显示为绿色）<br>
+* 支持p2p通讯（基于TCP协议，p2p通道可用时显示为绿色）<br>
 * 支持自定义代理服务器 <br>
 免费，测试稳定后考虑开源. <br>
 包含一个android客户端和需内网安装的服务端.<br>
@@ -100,7 +100,7 @@
 ```
 ### 6、执行服务端命令(参数说明 i:最大接入连接数,o:最大接出连接数,w:最大线程数)<br>
 * linux下执行命令："chmod +x proxy_server && nohup ./proxy_server -i1000 -o1000 -w8 >/dev/null &"<br>
-* windows下执行命令：proxy_server -i1000 -o1000 -w8 <br>
+* windows下执行命令：proxy_server.exe -i1000 -o1000 -w8 <br>
 ### 7、使用注册时的用户名/密码登陆手机客户端<br>
 ![operator](https://github.com/lazy-luo/smarGate/blob/master/res/oper1.png)<br>
 ### 8、在客户端中可以看到上线的服务端，可以在客户端上定义端口反弹规则<br>
