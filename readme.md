@@ -165,7 +165,16 @@
 * 请您仔细阅读以下申明，您在使用smarGate工具软件，表明您对以下内容的接受：<br> 
   1、严禁使用本软件从事计算机黑客以及其他任何危害计算机信息网络安全的行为;<br> 
   2、本软件属于正规网络接入软件，请合理，合法的使用；勿用于违反法律，道德及影响他人利益的活动；如果因用于非法用途，由此造成的不良后果，由用户自行负责，本软件开发者不承担任何责任及损失。<br>
-## 更新列表<br>  
+## 捐助
+如果您觉得 smarGate 对你有帮助，欢迎给予我们一定的捐助来维持项目的长期发展！<br>
+ps：捐赠建议附上注册用户名<br>
+<details>
+<summary>
+	<mark><font size=5 color=darkred>微信捐赠</font></mark>
+</summary>
+<img src="https://github.com/lazy-luo/smarGate/blob/master/res/donation.png"/>
+</details>
+## 附：更新列表<br>  
 ### 2020-03-13：<br>
 1、修复tcp-cork特定条件下丢失writable-event造成网络延迟的BUG<br>
 2、提升内存池运行性能<br>
@@ -228,13 +237,3 @@
 3、新增对IPv6防火墙穿透支持（移动端支持ipv6，且内网服务端支持ipv6）<br>
 【重要提示】v0.14版本将于之前版本不兼容，请务必更新版本！！！<br>
 ### ....初始版本v0.13<br>
-
-## 捐助
-如果您觉得 smarGate 对你有帮助，欢迎给予我们一定的捐助来维持项目的长期发展！<br>
-ps：捐赠建议附上注册用户名<br>
-<details>
-<summary>
-	<mark><font size=5 color=darkred>微信捐赠</font></mark>
-</summary>
-<img src="https://github.com/lazy-luo/smarGate/blob/master/res/donation.png"/>
-</details>
