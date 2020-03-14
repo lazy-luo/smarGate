@@ -1,5 +1,5 @@
 # 中文 | [English](https://github.com/lazy-luo/smarGate/blob/master/README_en.md)
-# 如果你期望
+# 如你所愿
 * 注重安全，不允许内网任何端口被映射到外网，不想更改任何防火墙配置<br>
 * 注重带宽，”4G手机+v6宽带“希望采用P2P方式访问内网服务<br>
 * 注重节约，免费使用，同时不想购买vps或无法获取公网IP<br>
