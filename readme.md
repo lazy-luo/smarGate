@@ -237,7 +237,7 @@ ps：捐赠建议附上注册用户名<br>
 4、支持编译为mini版本，不再静态编译openssl；对openssl库从0.9.8~1.1.1的全系动态兼容，二进制包缩小为1M左右（已放入dynamic目录，需配置ssl库）<br>
 ### 2019-05-27更新到v0.18：<br>
 1、性能优化<br>
-2、提供ipv6 P2P开关机制：<ipv4-tunnel-first value="false"/> 如需关闭ipv6点对点则设置为“true”，默认值为“false”<br>
+2、提供ipv6 P2P开关机制：&lt;ipv4-tunnel-first value="false"/&gt; 如需关闭ipv6点对点则设置为“true”，默认值为“false”<br>
 3、增加客户端ipv6标志及连接状态提示<br>
 ### 2019-05-21：<br>
 1、修复Raspbian jessie下无法检测IPv6的BUG<br>
