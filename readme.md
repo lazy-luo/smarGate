@@ -194,6 +194,29 @@ ps：捐赠建议附上注册用户名<br>
 	<mark><font size=5 color=darkred>更新历史</font></mark>
 </summary>
 	
+### 2020-04-30更新到v0.26：<br>
+1、修复IP切换时配置的HTTP服务可能不可用的问题<br>
+2、对已root手机，尝试获取root权限，支持配置1024以下的保留端口<br>
+3、解决绝对路径执行（多为开机启动脚本）且不指定-f参数时无法定位默认配置文件问题<br>
+3、服务端增加HTTP基于内容替换选项（影响效率，忽略压缩数据。对于部分js中将ip端口返回到浏览器的不规范内网web应用），默认不过滤内容<br>
+```
+	……
+	<moudle-parameter>
+		<http-content-type-filter value="application/javascript" />
+		……
+	<moudle-parameter/>
+	……
+```
+4、服务端增加指定P2P协商端口选项，默认选择随机端口<br>
+```
+	……
+	<moudle-parameter>
+		<negotiation-port value="xxxxx" />
+		……
+	<moudle-parameter/>
+	……
+```
+5、增加“官方代理”开关，默认打开。关闭时在任何情况下都不会走官方代理转发数据<br>
 ### 2020-03-13：<br>
 1、修复tcp-cork特定条件下丢失writable-event造成网络延迟的BUG<br>
 2、提升内存池运行性能<br>
