@@ -95,7 +95,7 @@
 ### 2、注册新用户（邀请码必填，为数字，可任意填。ps：如果必填信息未填完整,或包含中文字符，会注册失败）<br>
 ![login](https://github.com/lazy-luo/smarGate/blob/master/res/login.png)<br>
 ![register](https://github.com/lazy-luo/smarGate/blob/master/res/register.png)<br>
-### 3、注册成功后请务必记住返回的服务ID(N)<br>
+### 3、注册成功后请务必记住返回的服务ID(N) 【重要】：注册成功后务必在1小时内完成首次登录<br>
 ![register result](https://github.com/lazy-luo/smarGate/blob/master/res/registerok.png)<br>
 ### 4、下载内网服务器适合的服务端版本（目前支持linux-x86-32/64，windows，及linux-arm【树莓派、群晖】）<br>
 ### 5、解压服务端压缩包，修改配置文件(conf-proxy.xml):<br>
