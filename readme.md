@@ -5,7 +5,7 @@
 * 注重节约，无需购买vps、无需公网IP；家中淘汰Android手机可做服务器<br>
 * 注重可靠，随用随有，可7*24不间断服务，且不受UDP协议Qos之苦<br>
 * 注重可控，客户端一点配置，且随时随地控制服务开启/关闭<br>
-* 注重环保，免安装，体量小巧 allinone，高性能且资源占用最少<br>
+* 注重环保，免安装，体量小巧（mini版1MB左右） allinone，高性能且资源占用最少<br>
 * 注重便携，无论工作或是度假，不管在任何地方，只要手机有网络，一切尽在掌控<br>
 * ......如果这都是你想要的！请耐心继续往下看；如果你还想要...请提issue，【更新历史】也有看头哦<br>
 # 重要的事情说三遍！
@@ -91,13 +91,13 @@
   2. 部分机型android8.0下可能闪退，原因是webview版本BUG，可以尝试升级系统或升级webview组件<br>
 
 ## 使用指南:<br>
-### 1、下载android客户端（app-release.apk）支持armv7及arm64 cpu架构<br>
+### 1、下载android app（app-release.apk包含客户端和服务端）支持armv7及arm64 cpu架构<br>
 ### 2、注册新用户（邀请码必填，为数字，可任意填。ps：如果必填信息未填完整,或包含中文字符，会注册失败）<br>
 ![login](https://github.com/lazy-luo/smarGate/blob/master/res/login.png)<br>
 ![register](https://github.com/lazy-luo/smarGate/blob/master/res/register.png)<br>
 ### 3、注册成功后请务必记住返回的服务ID(N) 【重要】：注册成功后务必在1小时内完成首次登录<br>
 ![register result](https://github.com/lazy-luo/smarGate/blob/master/res/registerok.png)<br>
-### 4、下载内网服务器适合的服务端版本（目前支持linux-x86-32/64，windows，及linux-arm【树莓派、群晖】）<br>
+### 4、下载内网服务器适合的服务端版本（目前支持linux-x86-32/64，windows，及linux-arm【树莓派、群晖】,另：Android app自带服务端模式）<br>
 ### 5、解压服务端压缩包，修改配置文件(conf-proxy.xml):<br>
 ```
   <?xml version="1.0" encoding="GBK"?>
@@ -114,6 +114,7 @@
 ### 6、执行服务端命令(参数说明 i:最大接入连接数,o:最大接出连接数,w:最大线程数)<br>
 * linux下执行命令："chmod +x proxy_server && nohup ./proxy_server -i1000 -o1000 -w8 >/dev/null &"<br>
 * windows下执行命令：proxy_server.exe -i1000 -o1000 -w8 <br>
+* Android 手机/设备：运行app -〉编辑模式下，配置服务端信息 -〉打开“服务端”开关 -〉重启app <br>
 ### 7、使用注册时的用户名/密码登陆手机客户端<br>
 ![operator](https://github.com/lazy-luo/smarGate/blob/master/res/oper1.png)<br>
 ### 8、在客户端中可以看到上线的服务端，可以在客户端上定义端口反弹规则<br>
