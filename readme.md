@@ -97,6 +97,7 @@
   2. 部分机型android8.0下可能闪退，原因是webview版本BUG，可以尝试升级系统或升级webview组件<br>
 
 ## 使用指南:<br>
+<a href=https://github.com/lazy-luo/smarGate/wiki/常用服务穿透配置>【常用服务配置】</a><br>
 ### 1、下载android app（app-release.apk包含客户端和服务端）支持armv7及arm64 cpu架构<br>
 ### 2、注册新用户（邀请码必填，为数字，可任意填。ps：如果必填信息未填完整,或包含中文字符，会注册失败）<br>
 ![login](https://github.com/lazy-luo/smarGate/blob/master/res/login.png)<br>
