@@ -54,6 +54,7 @@
     <app-config code="PROXY" name="proxy-server">
         <app-parameter>
 	        <proxy-service-port value="9001"/><!--自定义代理端口 -->
+		<access-token value="nnnnn”"/><!--访问token，必须为数字【可选配】 -->
           <!-- 如果自己有证书及私钥，则配置如下项，启动安全的SSL通道，其中文件名需要配置正确；没有证书则不需要配置，启用普通tcp连接
 	        <ssl-cacert-file value="xxx.crt"/>
 	        <ssl-privatekey-file value="xxx.key"/>
@@ -80,7 +81,7 @@
       ......
     </moudle-parameter>
     <!-- 配置上述代理服务器的ip或域名+端口，注意：ip必须为公网IP。ssl选项必须配置正确，如果代理服务器有证书且生效则配置为true否则为false -->
-    <channel address="xxx.xxx.xxx.xxx:9001" ssl="false" />
+    <channel address="xxx.xxx.xxx.xxx:9001" ssl="false" token="nnnnn" /><!--访问token，必须与代理服务器一致，如果没有则不配 -->
 ```
 * 支持p2p通道<br>
   * 使用TCP协议进行p2p穿透，提升安全性<br>
@@ -197,6 +198,24 @@ ps：捐赠建议附上注册用户名<br>
 	<mark><font size=5 color=darkred>更新历史</font></mark>
 </summary>
 	
+### 2020-12-13更新到v0.28: <br>
+1、自定义代理增加token支持，防止非法访问。同时支持配置访问许可列表(access-token只能输入数字,access-restricting可输入允许的SID，多个SID用“:”分隔,access-restricting可不配)
+ A、代理服务器配置：
+ ```
+ <app-parameter>
+  <proxy-service-port value="9001"/>
+  <access-token value="nnnnn”"/>
+  <access-restricting value="xxxxx"/>
+  …
+ </app-parameter>
+ ```
+ B、服务端配置(token必须与代理服务器一致):
+ ```
+ <channel address="x.x.x.x:9001" ssl="true" token="nnnnn" />
+```
+2、对于隧道超时断开机制做了优化（仅针对P2P隧道及用户代理隧道）：只要有连接接入且连接正常情况下客户端会随机时延发送心跳，尽量防止超时断开。
+ 场景：ssh访问时，较长时间不输入会保持心跳，不至于1两分钟空闲就断开了。
+
 ### 2020-05-23更新到v0.27：<br>
 1、去掉root权限获取功能，保持最低权限要求。暂不开发支持配置1024以下端口的能力<br>
 2、由于自用树莓派被孩子摔坏了，只能压榨淘汰手机剩余价值，Android app端增加“服务端模式”支持，可以放在家中作为服务器<br>
