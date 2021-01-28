@@ -138,7 +138,7 @@
   >> 2、弹出框中下载安装 <br>
   >> 网盘链接为最新测试版本，github上版本稍有滞后 <br>
   >> 附网盘下载地址： https://pan.baidu.com/s/14Iq60kxHW711NVoCVKWySg <br>
-
+  >> gitee地址（速度快些，不会有图片无法显示问题）：https://gitee.com/lazy-luo/smarGate <br>
   >> 如有需要请添加微信：ws_lzy008 注明：smarGate ，视情况组建技术讨论群<br>
 * Q：需要访问家中局域网多台设备，是否每台都需要安装服务端？<br>
    >> A：不需要，只需选择任意一台设备安装服务端即可。<br>
