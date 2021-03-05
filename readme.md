@@ -198,6 +198,12 @@ ps：捐赠建议附上注册用户名<br>
 	<mark><font size=5 color=darkred>更新历史</font></mark>
 </summary>
 	
+### 2021-03-05更新到v0.29: <br>
+1、修复ipv6与ipv4网络切换存在的服务端core-dump问题<br>
+2、客户端新增ipv4-only网络模式选项，用于在ipv6网络环境下由于特殊需求需要使用ipv4进行p2p连接的场景（强制使用ipv4进行网络穿透）<br>
+3、其它一些bug修复<br>
+注意：特定场景下由于存在core-dump的致命问题，0.29版本需要同时更新客户端及服务端
+	
 ### 2020-12-13更新到v0.28: <br>
 1、自定义代理增加token支持，防止非法访问。同时支持配置访问许可列表(access-token只能输入数字,access-restricting可输入允许的SID，多个SID用“:”分隔,access-restricting可不配) <br>
  A、代理服务器配置：
