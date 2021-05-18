@@ -87,9 +87,10 @@
   * 使用TCP协议进行p2p穿透，提升安全性<br>
   * 不是所有的网络都支持p2p，取决于两端NAT类型
   * v0.14以上版本，直接支持ipv6，且能提供防火墙穿透
-  * P2P测试结论：【NAT1-〉Full Cone ， NAT2-〉Restricted Cone ， NAT3-〉Port Restricted Cone ， NAT4-〉Symmetric】
+  * P2P测试结论：一端是NAT4，另一端是NAT3或NAT4时无法打通<br>
+注：NAT1-〉Full Cone ， NAT2-〉Restricted Cone ， NAT3-〉Port Restricted Cone ， NAT4-〉Symmetric<br>
   <table>
-	<th>服务端NAT</th><th>客户端NAT</th><th>P2P成功</th>
+	<th>服务端 NAT</th><th>客户端 NAT</th><th>P2P成功</th>
 	<tr><td>NAT1-3</td><td>NAT1-3</td><td>YES</td></tr>
 	<tr><td>NAT1-2</td><td>NAT4</td><td>YES</td></tr>
 	<tr><td>NAT4</td><td>NAT1-2</td><td>YES</td></tr>
