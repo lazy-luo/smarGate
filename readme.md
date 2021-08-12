@@ -1,5 +1,6 @@
 # 中文 | [English](https://github.com/lazy-luo/smarGate/blob/master/README_en.md)
 # 快速概览
+* 平台适配，支持linux、windows、macos、android、（tob，小型机：hp-unix、solaris、AIX）
 * 注重安全，“内网”到“内网”的穿透，无需映射任何端口到外网，不更改任何防火墙配置<br>
 * 注重带宽，”4G手机+v6宽带“采用P2P方式访问内网服务（v4支持NAT1-3穿透）<br>
 * 注重节约，无需购买vps、无需公网IP；家中淘汰Android手机可做服务器<br>
