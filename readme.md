@@ -217,8 +217,14 @@ ps：捐赠建议附上注册用户名<br>
 </summary>
 	
 ### 2021-10-17更新到v0.30.2: <br>
-1、自定义代理支持ssl认证<br>
-2、网络P2P情况下，支持配置ssl隧道加密 <br>
+1、自定义代理支持ssl验证<br>
+2、网络P2P情况下，支持配置成ssl隧道（ **要求服务端必须配置证书** ）<br>
+```
+<app-parameter>
+  <ssl-tunnel-required value="first" /><!-- 取值有3个：none、first、only -->
+  ...
+</app-parameter>
+```
 3、其他优化<br>
 	
 ### 2021-09-24更新到v0.30: <br>
