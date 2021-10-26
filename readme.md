@@ -1,4 +1,5 @@
 # 中文 | [English](https://github.com/lazy-luo/smarGate/blob/master/README_en.md)
+# <a href=https://github.com/lazy-luo/smarGate/wiki/快速上手手册>【快速上手手册】</a><br>
 # 快速概览
 * 平台适配，支持linux、windows、macos、android、（tob，小型机：hp-unix、solaris、AIX）<br>
 * cpu架构，支持x86、arm、mips（tob：alpha、PowerPC、SPRAC）<br>
