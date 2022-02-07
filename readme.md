@@ -218,6 +218,11 @@ ps：捐赠建议附上注册用户名<br>
 	<mark><font size=5 color=darkred>更新历史</font></mark>
 </summary>
 	
+### 2022-02-07更新到v0.30.4: <br>
+1、提供mips64el支持<br>
+2、增加app端系统图标显示 <br>
+3、其它优化<br>
+	
 ### 2021-11-06更新到v0.30.3: <br>
 1、修复app端内存占用只显示jvm不包含native的BUG<br>
 2、优化网络引擎，提升高并发下的稳定性及公平性 <br>
