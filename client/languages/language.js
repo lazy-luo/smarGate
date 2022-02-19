@@ -6,7 +6,7 @@ var g_languages = [
     ,"清缓存"//4
     ,"改密码"//5
     ,"保 存"//6
-    ,"自动刷新"//7
+    ,"模式切换"//7
     ,"删 除"//8
     ,"登 录"//9
     ,"注 册"//10
@@ -103,6 +103,7 @@ var g_languages = [
     ,"配置修改成功！将在下次重启时生效"//101
     ,"移动网关将保持提供服务"//102
     ,"服务启动时间"//103
+    ,"暴露服务集"//104
     ],
     ["English"
     , "OK" //1
@@ -111,12 +112,12 @@ var g_languages = [
     , "Clear" //4
     , "Chpass" //5
     , "Save" //6
-    , "Refresh" //7
+    , "Chmode" //7
     , "Delete" //8
     , "Login" //9
     , "Register" //10
     , "Back to login" //11
-    , "Mobile Gateway" //12
+    , "SmarGate" //12
     , "User login" //13
     , "User name" //14
     , "Password" //15
@@ -130,7 +131,7 @@ var g_languages = [
     , "Agreement of consent" //23
     , "Invitation code must be filled in" //24
     , "Desc" //25
-    , "Information" //26
+    , "Info" //26
     , "SND" //27
     , "RX" //28
     , "Tot-mem" //29
@@ -208,5 +209,6 @@ var g_languages = [
     , "Configuration modification succeeded! Will take effect on the next reboot "//101
     , "The SmarGate will remain in service" // 102
     , "Service start time" // 103
+    , "Exposed services"//104
     ]
   ];
