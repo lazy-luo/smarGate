@@ -116,26 +116,22 @@
 
 ## 使用指南:<br>
 <a href="https://github.com/lazy-luo/smarGate/wiki/常用服务穿透配置">【常用服务配置】</a><br>
-### 1、下载android app（app-release.apk包含客户端和服务端）支持armv7及arm64 cpu架构<br>
-### 2、注册新用户（邀请码必填，为数字，可任意填。ps：如果必填信息未填完整,或包含中文字符，会注册失败）<br>
+### 1、下载app && 注册新用户
+* 下载android app（app-release.apk包含客户端和服务端）支持armv7及arm64 cpu架构<br>
+* 注册新用户（邀请码必填，为数字，可任意填。ps：如果必填信息未填完整,或包含中文字符，会注册失败）<br>
+* 注册成功后请务必记住返回的服务ID(N) 【重要】：注册成功后务必在1小时内完成首次登录<br>
 <details>
 <summary>
 	<mark><font size=5 color=darkred>展开图示</font></mark>
 </summary>
 <img src="https://github.com/lazy-luo/smarGate/blob/master/res/login.png" /><br>
 <img src="https://github.com/lazy-luo/smarGate/blob/master/res/register.png" /><br>
-</details>
-
-### 3、注册成功后请务必记住返回的服务ID(N) 【重要】：注册成功后务必在1小时内完成首次登录<br>
-<details>
-<summary>
-	<mark><font size=5 color=darkred>展开图示</font></mark>
-</summary>	
 <img src="https://github.com/lazy-luo/smarGate/blob/master/res/registerok.png" /><br>
 </details>
 
-### 4、下载内网服务器适合的服务端版本（目前支持linux-x86-32/64，windows，及linux-arm【树莓派、群晖】,另：Android app自带服务端模式）<br>
-### 5、解压服务端压缩包，修改配置文件(conf-proxy.xml):<br>
+### 2、下载合适的服务端版本 & 配置
+* 下载内网服务器适合的服务端版本（目前支持linux-x86-32/64，windows，及linux-arm【树莓派、群晖】,另：Android app自带服务端模式）<br>
+* 解压服务端压缩包，修改配置文件(conf-proxy.xml):<br>
 <details>	
 <summary>
 	<mark><font size=5 color=darkred>配置样例</font></mark>
@@ -155,20 +151,13 @@
 ```
 </details>
 
-### 6、执行服务端命令(参数说明 i:最大接入连接数,o:最大接出连接数,w:最大线程数)<br>
+### 3、执行服务端命令(参数说明 i:最大接入连接数,o:最大接出连接数,w:最大线程数)<br>
 * linux下执行命令：chmod +x proxy_server && nohup ./proxy_server -i1000 -o1000 -w8 >/dev/null & <br>
 * windows下执行命令：proxy_server.exe -i1000 -o1000 -w8 <br>
 * Android 手机/设备：运行app -〉编辑模式下，配置服务端信息 -〉打开“服务端”开关 -〉重启app <br>
 * OpenWrt mips设备安装请见：<a href=https://github.com/lazy-luo/smarGate/issues/65>【MIPS linux下正确使用方式】</a><br>
-### 7、使用注册时的用户名/密码登陆手机客户端<br>
-<details>
-<summary>
-	<mark><font size=5 color=darkred>展开图示</font></mark>
-</summary>
-<img src="https://github.com/lazy-luo/smarGate/blob/master/res/oper1.png" /><br>
-</details>
-
-### 8、在客户端中可以看到上线的服务端，可以在客户端上定义端口反弹规则<br>
+### 4、登陆手机app && 配置端口映射<br>
+* 在客户端中可以看到上线的服务端（“访问点”），可以在客户端上定义端口映射规则<br>
 <details>
 <summary>
 	<mark><font size=5 color=darkred>展开图示</font></mark>
@@ -178,7 +167,7 @@
 <img src="https://github.com/lazy-luo/smarGate/blob/master/res/oper3.png" /><br>
 </details>
 
-### 9、电脑或手机可以直接访问手机客户端设置的服务（如ssh、http等）<br>
+### 5、电脑或手机可以直接访问手机客户端设置的服务（如ssh、http等）<br>
 ## 补充说明:<br>
 * 所有版本已经打包了依赖，开箱即用.<br>
 * 系统将自动清除30天以上未使用的“僵尸账号”.<br>
