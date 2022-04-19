@@ -47,13 +47,18 @@
 	* socket 连接池<br>
 	* 多级任务队列 <br>
 	* ...<br>
-* 附：交互示意图<br>
-![operator](https://github.com/lazy-luo/smarGate/blob/master/res/smarGateArch.png)<br>
-
+<details>
+<summary>
+	<mark><font size=6 color=darkred>附：交互示意图</font></mark>
+</summary>
+<img src="https://github.com/lazy-luo/smarGate/blob/master/res/smarGateArch.png" /><br>
+</details>
+	
 ## smarGate有什么主要功能？<br>
 * 支持代理穿透<br>
   * 官方提供免费的代理服务器（共享带宽，多人共用时比较慢，最佳实践为启用自有代理服务器）<br>
   * <I>如果自己有云服务器（具备公网ip），用户可自定义自己的代理服务器，且在代理服务器上安装proxy_server。所有数据传输走用户配置的代理服务器（为了防止中间人攻击，代理服务器需要用户生成自签名证书）</I> <br>
+
 ```  
   1、“代理服务器”配置如下（代理服务器必须允许任意端口“入站”连接）：
 ```
@@ -110,15 +115,32 @@
   * 其它内网穿透工具的主推模式，将内网服务直接映射到外网端口<br>
 
 ## 使用指南:<br>
-<a href=https://github.com/lazy-luo/smarGate/wiki/常用服务穿透配置>【常用服务配置】</a><br>
+<a href="https://github.com/lazy-luo/smarGate/wiki/常用服务穿透配置">【常用服务配置】</a><br>
 ### 1、下载android app（app-release.apk包含客户端和服务端）支持armv7及arm64 cpu架构<br>
 ### 2、注册新用户（邀请码必填，为数字，可任意填。ps：如果必填信息未填完整,或包含中文字符，会注册失败）<br>
-![login](https://github.com/lazy-luo/smarGate/blob/master/res/login.png)<br>
-![register](https://github.com/lazy-luo/smarGate/blob/master/res/register.png)<br>
+<details>
+<summary>
+	<mark><font size=5 color=darkred>展开图示</font></mark>
+</summary>
+<img src="https://github.com/lazy-luo/smarGate/blob/master/res/login.png" /><br>
+<img src="https://github.com/lazy-luo/smarGate/blob/master/res/register.png" /><br>
+</details>
+
 ### 3、注册成功后请务必记住返回的服务ID(N) 【重要】：注册成功后务必在1小时内完成首次登录<br>
-![register result](https://github.com/lazy-luo/smarGate/blob/master/res/registerok.png)<br>
+<details>
+<summary>
+	<mark><font size=5 color=darkred>展开图示</font></mark>
+</summary>	
+<img src="https://github.com/lazy-luo/smarGate/blob/master/res/registerok.png" /><br>
+</details>
+
 ### 4、下载内网服务器适合的服务端版本（目前支持linux-x86-32/64，windows，及linux-arm【树莓派、群晖】,另：Android app自带服务端模式）<br>
 ### 5、解压服务端压缩包，修改配置文件(conf-proxy.xml):<br>
+<details>	
+<summary>
+	<mark><font size=5 color=darkred>配置样例</font></mark>
+</summary>
+	
 ```
   <?xml version="1.0" encoding="GBK"?>
     <app-config code="PROXY" name="proxy-server">
@@ -131,17 +153,31 @@
     </moudle-parameter>
   </app-config>
 ```
+</details>
+
 ### 6、执行服务端命令(参数说明 i:最大接入连接数,o:最大接出连接数,w:最大线程数)<br>
 * linux下执行命令：chmod +x proxy_server && nohup ./proxy_server -i1000 -o1000 -w8 >/dev/null & <br>
 * windows下执行命令：proxy_server.exe -i1000 -o1000 -w8 <br>
 * Android 手机/设备：运行app -〉编辑模式下，配置服务端信息 -〉打开“服务端”开关 -〉重启app <br>
 * OpenWrt mips设备安装请见：<a href=https://github.com/lazy-luo/smarGate/issues/65>【MIPS linux下正确使用方式】</a><br>
 ### 7、使用注册时的用户名/密码登陆手机客户端<br>
-![operator](https://github.com/lazy-luo/smarGate/blob/master/res/oper1.png)<br>
+<details>
+<summary>
+	<mark><font size=5 color=darkred>展开图示</font></mark>
+</summary>
+<img src="https://github.com/lazy-luo/smarGate/blob/master/res/oper1.png" /><br>
+</details>
+
 ### 8、在客户端中可以看到上线的服务端，可以在客户端上定义端口反弹规则<br>
-![operator](https://github.com/lazy-luo/smarGate/blob/master/res/oper2.png)<br>
-### 配置中的“远程ip”为“访问点”对应内网中的某台主机ip（localhost或127.0.0.1代表内网server端所在机器本身）
-![operator](https://github.com/lazy-luo/smarGate/blob/master/res/oper3.png)<br>
+<details>
+<summary>
+	<mark><font size=5 color=darkred>展开图示</font></mark>
+</summary>
+<img src="https://github.com/lazy-luo/smarGate/blob/master/res/oper2.png" /><br>
+<b>配置中的“远程ip”为“访问点”对应内网中的某台主机ip（localhost或127.0.0.1代表内网server端所在机器本身）</b>
+<img src="https://github.com/lazy-luo/smarGate/blob/master/res/oper3.png" /><br>
+</details>
+
 ### 9、电脑或手机可以直接访问手机客户端设置的服务（如ssh、http等）<br>
 ## 补充说明:<br>
 * 所有版本已经打包了依赖，开箱即用.<br>
@@ -198,7 +234,7 @@
   2、android客户端设置好后让其在后台运行，如果始终保持前台会定时刷新，webview控件空耗电，你懂的;<br>
   3、服务端始终保持后台运行，安全放心，只有你自己才能访问；<br>
   ...使用场景...<br>
-  <a href=https://cloud.tencent.com/developer/article/1926888>【家用摄像头P2P直连】</a><br>
+  <a href="https://cloud.tencent.com/developer/article/1926888">【家用摄像头P2P直连】</a><br>
 ## 免责申明<br>  
 * 请您仔细阅读以下申明，您在使用smarGate工具软件，表明您对以下内容的接受：<br> 
   1、严禁使用本软件从事计算机黑客以及其他任何危害计算机信息网络安全的行为;<br> 
