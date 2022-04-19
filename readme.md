@@ -135,6 +135,7 @@
 * linux下执行命令：chmod +x proxy_server && nohup ./proxy_server -i1000 -o1000 -w8 >/dev/null & <br>
 * windows下执行命令：proxy_server.exe -i1000 -o1000 -w8 <br>
 * Android 手机/设备：运行app -〉编辑模式下，配置服务端信息 -〉打开“服务端”开关 -〉重启app <br>
+* OpenWrt mips设备安装请见：<a href=https://github.com/lazy-luo/smarGate/issues/65>【MIPS linux下正确使用方式】</a><br>
 ### 7、使用注册时的用户名/密码登陆手机客户端<br>
 ![operator](https://github.com/lazy-luo/smarGate/blob/master/res/oper1.png)<br>
 ### 8、在客户端中可以看到上线的服务端，可以在客户端上定义端口反弹规则<br>
