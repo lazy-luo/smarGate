@@ -127,7 +127,7 @@
 <img src="https://github.com/lazy-luo/smarGate/blob/master/res/registerok.png" /><br>
 </details>
 
-### 2、下载服务端 & 配置
+### 2、下载服务端 && 配置
 * 下载内网服务器适合的服务端版本（目前支持linux-x86-32/64，windows，及linux-arm【树莓派、群晖】,另：Android app自带服务端模式）<br>
 * 解压服务端压缩包，修改配置文件(conf-proxy.xml):<br>
 <details>	
