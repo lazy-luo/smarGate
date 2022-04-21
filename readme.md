@@ -112,8 +112,8 @@
   * 其它内网穿透工具的主推模式，将内网服务直接映射到外网端口<br>
 
 ## 使用指南:<br>
-<a href="https://www.baidu.com/s?wd=%22smargate%22">使用实践-度娘</a><br><br>
-<a href="https://www.google.com/search?q=%22smargate%22">使用实践-google</a>
+<a href="https://www.baidu.com/s?wd=smargate%20内网穿透">使用实践-度娘</a><br><br>
+<a href="https://www.google.com/search?q=smargate+内网穿透">使用实践-google</a>
 ### 1、下载app && 注册新用户
 * 下载android app（app-release.apk包含客户端和服务端）支持armv7及arm64 cpu架构<br>
 * 注册新用户（邀请码必填，为数字，可任意填。ps：如果必填信息未填完整,或包含中文字符，会注册失败）<br>
