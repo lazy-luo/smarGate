@@ -242,6 +242,11 @@ ps：捐赠建议附上注册用户名<br>
 	<mark><font size=5 color=darkred>更新历史</font></mark>
 </summary>
 	
+### 2022-05-04: <br>
+1、支持riscv32/64架构，编译时同mips架构使用musl库进行链接<br>
+2、优化网络传输层<br>
+3、版本暂保持不变<br>
+	
 ### 2022-02-07更新到v0.30.4: <br>
 1、提供mips64el支持<br>
 2、增加app端系统图标显示 <br>
