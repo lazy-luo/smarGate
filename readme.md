@@ -242,6 +242,18 @@ ps：捐赠建议附上注册用户名<br>
 	<mark><font size=5 color=darkred>更新历史</font></mark>
 </summary>
 	
+### 2022-05-17: <br>
+1、服务端支持自动生成自签名证书（默认文件名为server.xxx）<br>
+-->a、配置ssl-create-certfile选项 <br>
+```
+<app-parameter>	
+  <ssl-create-certfile value="true" />
+...
+</app-parameter>
+```
+-->b、确保安装openssl <br>
+-->c、不要指定证书文件（不配置 ssl-cacert-file 及 ssl-privatekey-file）<br>
+	
 ### 2022-05-04: <br>
 1、支持riscv32/64架构，编译时同mips架构使用musl库进行链接<br>
 2、优化网络传输层<br>
