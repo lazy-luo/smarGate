@@ -1,7 +1,7 @@
 # 中文 | [English](https://github.com/lazy-luo/smarGate/blob/master/README_en.md)
 # 快速概览<a href=https://github.com/lazy-luo/smarGate/wiki/快速上手手册>【快速上手手册】</a><br>
 * 平台适配，支持linux、windows、macos、android、（tob，小型机：hp-unix、solaris、AIX）<br>
-* cpu架构，支持x86、arm、mips（tob：alpha、PowerPC、SPRAC）<br>
+* cpu架构，支持x86、arm、mips、riscv（tob：alpha、PowerPC、SPRAC）<br>
 * 注重安全，“内网”到“内网”的穿透，无需映射任何端口到外网，不更改任何防火墙配置<br>
 * 注重带宽，”4G手机+v6宽带“采用P2P方式访问内网服务（基于TCP协议，v4支持NAT1-3穿透）<br>
 * 注重节约，无需购买vps、无需公网IP；家中淘汰Android手机可做服务器<br>
@@ -16,8 +16,8 @@
 # APP端配置（必须）--- 无法正常使用典型情况
 * 必须配置“允许后台运行”权限，否则切后台即被系统断连
 * 必须配置“休眠时始终保持网络连接”，否则一旦休眠则被系统断连
-* 可以配置“允许自启动”权限，否则Android服务端模式下无法开机启动（v0.30版本）
-* 可以配置“麦克风”权限，否则Android服务端无法提供语音监听功能（v0.30版本）
+* 可以配置“允许自启动”权限，否则Android服务端模式下无法开机启动（v0.30及后续版本）
+* 可以配置“麦克风”权限，否则Android服务端无法提供语音监听功能（v0.30及后续版本）
 * 注意：SG不提供到国外IP的数据转发
 ## smarGate是什么？<br>
 #### 官方命名为“移动网关”，通过手机客户端将位于内网的服务端网络进行按需暴露，核心引擎采用c++实现。<br>
@@ -54,7 +54,7 @@
 ## smarGate有什么主要功能？<br>
 * 支持代理穿透<br>
   * 官方提供免费的代理服务器（共享带宽，多人共用时比较慢，最佳实践为启用自有代理服务器）<br>
-  * <I>如果自己有云服务器（具备公网ip），用户可自定义自己的代理服务器，且在代理服务器上安装proxy_server。所有数据传输走用户配置的代理服务器（为了防止中间人攻击，代理服务器需要用户生成自签名证书）</I> <br>
+  * <I>如果自己有云服务器（具备公网ip），用户可自定义自己的代理服务器，且在代理服务器上安装proxy_server。所有数据传输走用户配置的代理服务器（代理服务器需要证书，可自动生成也可配置已有证书）</I> <br>
 
 ```  
   1、“代理服务器”配置如下（代理服务器必须允许任意端口“入站”连接）：
@@ -65,7 +65,8 @@
         <app-parameter>
 	        <proxy-service-port value="9001"/><!--自定义代理端口 -->
 		<access-token value="nnnnn”"/><!--访问token，必须为数字【可选配】 -->
-          <!-- 如果自己有证书及私钥，则配置如下项，启动安全的SSL通道，其中文件名需要配置正确；没有证书则不需要配置，启用普通tcp连接
+		<ssl-create-certfile value="true" /><!-- 如未用如下选项指定证书，则自动生成证书【必须确保安装openssl】，默认为 false 代表无需自动生成 -->
+          <!-- 如果自己有证书及私钥，则配置如下项，启动安全的SSL通道，其中文件名需要配置正确；没有证书则不需要配置，可启用上面自动生成证书选项
 	        <ssl-cacert-file value="xxx.crt"/>
 	        <ssl-privatekey-file value="xxx.key"/>
           -->
@@ -82,6 +83,7 @@
 ```
 ......
     <app-parameter>
+       	     <ssl-create-certfile value="true" />
        <!-- 如果代理服务器启动安全的SSL通道，这里必须配置证书及私钥
 	     <ssl-cacert-file value="xxx.crt"/>
 	     <ssl-privatekey-file value="xxx.key"/>
@@ -90,8 +92,8 @@
     <moudle-parameter>
       ......
     </moudle-parameter>
-    <!-- 配置上述代理服务器的ip或域名+端口，注意：ip必须为公网IP。ssl选项必须配置正确，如果代理服务器有证书且生效则配置为true否则为false -->
-    <channel address="xxx.xxx.xxx.xxx:9001" ssl="false" token="nnnnn" /><!--访问token，必须与代理服务器一致，如果没有则不配 -->
+    <!-- 配置上述代理服务器的ip或域名+端口，注意：ip必须为公网IP。ssl选项必须配置正确，如果代理服务器有证书（包括自动生成证书）且生效则配置为true否则为false -->
+    <channel address="xxx.xxx.xxx.xxx:9001" ssl="true" token="nnnnn" /><!--访问token，必须与代理服务器一致，如果没有则不配 -->
 ```
 * 支持p2p通道<br>
   * 使用TCP协议进行p2p穿透，提升安全性<br>
@@ -138,12 +140,23 @@
 ```
   <?xml version="1.0" encoding="GBK"?>
     <app-config code="PROXY" name="proxy-server">
+       <app-parameter>
+	<!-- [ none | first | only ] ,none is default. 为P2P连接启用SSL加密，only代表只接受加密连接 -->
+	<ssl-tunnel-required value="first" />
+	<!-- 如未用如下选项指定证书，则自动生成证书【必须确保安装openssl】，默认为 false 代表无需自动生成 -->
+	<ssl-create-certfile value="true" /> 
+ <!-- 以下选项仅使用dynamic下的mini版本，指定ssl库及crypto库实际文件，linux下可由：ldd $(which openssl)|grep -E "libssl|libcrypto" 获取
+	<libssl value="libssl.so" />
+	<libcrypto value="libcrypto.so" />
+ -->
+       </app-parameter>
        <moudle-parameter>
         <log-level value="LOG_ERROR"/>
         <log-write-mode value="CONSOLE_ONLY"/>
         <app-name value="xxxxx [name of service points]." /><!-- need modify -->
         <app-description value="yyyyy [description of service points]" /><!-- need modify -->
-        <user-audit value="N:index"/><!-- need modify (N 为注册成功返回的服务ID，index为自定义的服务端实例序号，建议从1开始，不能重复. 例如:[12345:1])-->
+	<!-- user-audit need modify (N 为注册成功返回的服务ID，index为自定义的服务端实例序号，建议从1开始，不能重复. 例如:[12345:1])-->
+        <user-audit value="N:index"/>
     </moudle-parameter>
   </app-config>
 ```
