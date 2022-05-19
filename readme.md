@@ -145,7 +145,7 @@
 	<ssl-tunnel-required value="first" />
 	<!-- 如未用如下选项指定证书，则自动生成证书【必须确保安装openssl】，默认为 false 代表无需自动生成 -->
 	<ssl-create-certfile value="true" /> 
- <!-- 以下选项仅适用dynamic下的mini版本，指定ssl库及crypto库实际文件，linux下可由：ldd $(which openssl)|grep -E "libssl|libcrypto" 获取
+ <!-- 以下选项仅适用dynamic下的mini版本，指定ssl库及crypto库实际文件，linux下可由：ldd $(which openssl)|grep -E "libssl|libcrypto"|awk '{print $1}' 获取
 	<libssl value="libssl.so" />
 	<libcrypto value="libcrypto.so" />
  -->
