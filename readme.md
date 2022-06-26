@@ -64,6 +64,7 @@
     <app-config code="PROXY" name="proxy-server">
         <app-parameter>
 	        <proxy-service-port value="9001"/><!--自定义代理端口 -->
+		<owner-id value="xxxx" /><!-- xxxx 为注册成功返回的用户ID -->
 		<access-token value="nnnnn”"/><!--访问token，必须为数字【可选配】 -->
 		<ssl-create-certfile value="true" /><!-- 如未用如下选项指定证书，则自动生成证书【必须确保安装openssl】，默认为 false 代表无需自动生成 -->
           <!-- 如果自己有证书及私钥，则配置如下项，启动安全的SSL通道，其中文件名需要配置正确；没有证书则不需要配置，可启用上面自动生成证书选项
