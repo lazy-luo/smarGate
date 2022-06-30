@@ -255,7 +255,11 @@ ps：捐赠建议附上注册用户名<br>
 <summary>
 	<mark><font size=5 color=darkred>更新历史</font></mark>
 </summary>
-	
+
+### 2022-06-30: <br>
+1、修复32位大端机器运行服务端，无法正常代理的BUG<br>
+2、版本暂保持不变<br>
+
 ### 2022-05-17: <br>
 1、服务端支持自动生成自签名证书（默认文件名为server.xxx）<br>
 -->a、配置ssl-create-certfile选项 <br>
