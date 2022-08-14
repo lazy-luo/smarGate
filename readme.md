@@ -258,6 +258,10 @@ ps：捐赠建议附上注册用户名<br>
 	<mark><font size=5 color=darkred>更新历史</font></mark>
 </summary>
 
+### 2022-08-14更新到v0.31.3：<br>
+1、修复mips架构系统无法连接自定义代理的BUG<br>
+2、版本更新到v0.31.3<br>
+
 ### 2022-08-06更新到v0.31.2：<br>
 1、修复Windows平台偶发闪退BUG，增强稳定性<br>
 2、P2P连接及自定义代理进行keep-alive操作，尽可能避免重连时间窗口，提升可用性<br>
