@@ -117,8 +117,12 @@
 * 支持服务端之间的P2P端口映射（v0.31及以后版本） <br>
   * 具体配置主要通过 ip@index方式支持<br>
   
-```
-附：主要功能简述
+<details>
+<summary>
+	<mark><font size=6 color=darkred>附：主要功能简述</font></mark>
+</summary>
+	
+```	
 1、支持基于tcp的P2P连接隧道
 	。安全可靠，避免Qos
 2、支持所有基于tcp的各类协议”透明代理”
@@ -159,9 +163,11 @@
 	。android手机可作为服务端
 20、支持远程文件管理功能：浏览、上传、下载、删除，支持断点续传（version >= v0.31.6）
 	。在有p2p或自定义代理时，激活文件管理功能，可对手机和服务端电脑文件进行基本操作
-。。。
+。。。待续
+	
 ```
-
+</details>
+	
 ## 使用指南:<br>
 <a href="https://www.baidu.com/s?wd=smargate%20内网穿透">使用实践-度娘</a><br><br>
 <a href="https://www.google.com/search?q=smargate+内网穿透">使用实践-google</a>
