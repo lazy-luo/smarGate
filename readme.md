@@ -169,7 +169,7 @@
 </details>
 	
 ## 使用指南:<br>
-<a href="https://b23.tv/nm52P5Q">视频教学- B站</a><br><br>
+<a href="https://b23.tv/nm52P5Q">三方视频教学- B站</a><br><br>
 <a href="https://www.baidu.com/s?wd=smargate%20内网穿透">使用实践-度娘</a><br><br>
 <a href="https://www.google.com/search?q=smargate+内网穿透">使用实践-google</a>
 ### 1、下载app && 注册新用户
