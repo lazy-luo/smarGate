@@ -1,5 +1,5 @@
 # 中文 | [English](https://github.com/lazy-luo/smarGate/blob/master/README_en.md)
-# 快速概览<a href=https://github.com/lazy-luo/smarGate/wiki/快速上手手册>【快速上手手册】</a><br>
+# 快速概览<a href=https://github.com/lazy-luo/smarGate/wiki/快速上手手册>【快速上手手册】</a> <a href="https://b23.tv/nm52P5Q">【三方视频教学- B站】</a><br>
 * 平台适配，支持linux、windows、macos、android、（tob，小型机：hp-unix、solaris、AIX）<br>
 * cpu架构，支持x86、arm、mips、riscv（tob：alpha、PowerPC、SPRAC）<br>
 * 注重安全，“内网”到“内网”的穿透，无需映射任何端口到外网，不更改任何防火墙配置<br>
