@@ -311,6 +311,11 @@ ps：捐赠建议附上注册用户名<br>
 	<mark><font size=5 color=darkred>更新历史</font></mark>
 </summary>
 
+### 2023-09-08更新到v0.31.12：<br>
+1、修复bug<br>
+2、试验性支持socks协议<br>
+3、版本更新到v0.31.12<br>
+
 ### 2023-08-29更新到v0.31.11：<br>
 1、文件管理支持默认按时间排序<br>
 2、新增macos M1/M2支持<br>
