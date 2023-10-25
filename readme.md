@@ -311,6 +311,13 @@ ps：捐赠建议附上注册用户名<br>
 	<mark><font size=5 color=darkred>更新历史</font></mark>
 </summary>
 
+### 2023-10-25更新到v0.32.1：<br>
+1、修复bug<br>
+2、完善支持socks协议(仅支持ipv4 tcp)<br>
+3、完善支持HTTP proxy协议<br>
+4、APP支持VIP功能许可<br>
+5、版本更新到v0.32.1<br>
+
 ### 2023-09-08更新到v0.31.12：<br>
 1、修复bug<br>
 2、试验性支持socks协议(仅支持ipv4 tcp)<br>
