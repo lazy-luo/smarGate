@@ -104,6 +104,32 @@ var g_languages = [
     ,"移动网关将保持提供服务"//102
     ,"服务启动时间"//103
     ,"暴露服务集"//104
+    ,"服务端代理"//105
+    ,"请选择文件操作："//106
+    ,"上传"//107
+    ,"下载"//108
+    ,"文件管理"//109
+    ,"文件名"//110
+    ,"大小"//111
+    ,"当前版本过低,不支持自动升级,请手动更新！"//112
+    ,"自定义代理"//113
+    ,"自定义代理 IP:port..."//114
+    ,"访问Token"//115
+    ,"代理服务器Token..."//116
+    ,"P2P加密选项" //117
+    ,"none"//118
+    ,"first"//119
+    ,"only"//120
+    ,"序列号注册成功！"//121
+    ,"序列号注册失败！"//122
+    ,"序列号注册" //123
+    ,"序列号" //124
+    ,"必须输入序列号" //125
+    ,"VIP 到期剩余时间（天）:" //126
+    ,"播放" //127
+    ,"已发送定位请求..." //128
+    ,"定位请求失败" //129
+    ,"已成功获取定位信息" //130
     ],
     ["English"
     , "OK" //1
@@ -210,5 +236,31 @@ var g_languages = [
     , "The SmarGate will remain in service" // 102
     , "Service start time" // 103
     , "Exposed services"//104
+    , "Server Proxy"//105
+    , "Please select a file operation:"//106
+    , "upload"//107
+    , "download"//108
+    , "File Manager" //109
+    , "file name" //110
+    , "size" //111
+    , "The current version is too low to support automatic upgrade, please update manually!" //112
+    , "User proxy"//113
+    , "User proxy IP:port..."//114
+    , "Access token"//115
+    , "Token of proxy server..."//116
+    , "SSL option for P2P" //117
+    , "none"//118
+    , "first"//119
+    , "only"//120
+    , "Successful license register！"//121
+    , "Fault to license register！"//122
+    , "License register" //123
+    , "License key" //124
+    , "license key must be filled" //125
+    , "VIP exp-after-days:" //126
+    , "Play" //127
+    , "Location request has been sent..." //128
+    , "Location request failed" //129
+    , "Successfully obtained location information" //130
     ]
   ];
