@@ -1,5 +1,56 @@
-# 中文 | [English](https://github.com/lazy-luo/smarGate/blob/master/README_en.md)
-# 快速概览<a href=https://github.com/lazy-luo/smarGate/wiki/快速上手手册>【快速上手手册】</a> <a href="https://b23.tv/nm52P5Q">【三方视频教学- B站】</a><br>
+# samrGate（SG） 中文 | [English](https://github.com/lazy-luo/smarGate/blob/master/README_en.md)
+# 快速选择参考
+## SG是什么？
+* SG是个跨网段远程端口映射工具
+  * 支持内网到内网、内网到外网映射
+* SG是个通过移动APP统一管理跨网络映射的工具
+  * 所有配置入口都在app客户端，一眼看全、高度安全可控
+* SG是个可灵活控制访问入口的工具
+  * 访问入口既可配置到app所在手机上，也能配置到任意SG服务端电脑上
+* SG是个简单的远程文件管理工具
+  * 可对手机及服务端所在服务器进行文件管理操作
+* SG是个简单的socks代理工具
+* SG是个简单的http(s)代理工具
+* ......
+
+## SG有什么特点？
+* 所有映射都通过app客户端进行配置，服务端运行时免配置
+* 支持服务端到APP及服务端到服务端的端口映射
+  * 可以将服务端所在内网任意机器任意端口映射到app所在手机上，通过访问手机本地端口进行穿透访问
+  * 可以通过app客户端配置，将A服务端内网任意主机任意端口映射到B服务端所在主机上
+* 支持链式代理
+* 支持ipv4/6，基于TCP进行P2P穿透
+* 支持自建代理进行数据转发
+* 支持数据隧道加密（TLS）
+* 支持自动数据隧道选择
+  * 优先P2P，次选自定义代理，官方代理兜底
+* 支持自动版本升级及APP客户端上一键升级
+* socks及http(s)代理支持自定义ip白名单及域名白名单，支持CIDR格式IP段及域名统配符
+* 支持TCP协议服务，也支持UDP协议
+  * UDP采用UDP over TCP模式
+* ......
+
+## SG能解决什么问题？
+* 无视内外网，安全访问内网资源的场景
+* 需要P2P高带宽安全传输的场景
+* 有公网IP，需要将内网服务发布出去的场景
+* ......
+
+## SG怎么使用？
+* 下载APP并注册
+* 下载合适的服务端版本，根据用户ID进行配置并运行
+* 登录APP进行端口映射配置
+* 使用配置的映射进行访问
+
+## 有兴趣再细看
+
+<details>
+<summary>
+	<mark><font size=3 color=darkred>查看详细</font></mark>
+</summary>
+
+# 
+## 快速概览<a href=https://github.com/lazy-luo/smarGate/wiki/快速上手手册>【快速上手手册】</a> <a href="https://b23.tv/nm52P5Q">【三方视频教学- B站】</a><br>
 * 平台适配，支持linux、windows、macos、android、（tob，小型机：hp-unix、solaris、AIX）<br>
 * cpu架构，支持x86、arm、mips、riscv（tob：alpha、PowerPC、SPRAC）<br>
 * 注重安全，“内网”到“内网”的穿透，无需映射任何端口到外网，不更改任何防火墙配置<br>
@@ -13,7 +64,7 @@
 * 免费，测试稳定后考虑开源. <br>
 * 包含一个android客户端和需内网安装的服务端.<br>
 
-# APP端配置（必须）--- 无法正常使用典型情况
+## APP端配置（必须）--- 无法正常使用典型情况
 * 必须配置“允许后台运行”权限，否则切后台即被系统断连
 * 必须配置“休眠时始终保持网络连接”，否则一旦休眠则被系统断连
 * 可以配置“允许自启动”权限，否则Android服务端模式下无法开机启动（v0.30及后续版本）
@@ -240,6 +291,9 @@
 </details>
 
 ### 5、电脑或手机可以直接访问手机客户端设置的服务（如ssh、http等）<br>
+
+</details>
+
 ## 补充说明:<br>
 * 所有版本已经打包了依赖，开箱即用.<br>
 * 系统将自动清除30天以上未使用的“僵尸账号”.<br>
@@ -250,6 +304,11 @@
 >> 1、设置 -> 无线及网络 -> WLAN -> 系统休眠保持连接  "允许" （否则，系统休眠会被断连）<br>
 >> 2、设置 -> 无线及网络 -> 移动网络 -> 高级 ->始终保持数据连接 "允许"<br>
 
+<details>
+<summary>
+	<mark><font size=5 color=darkred>常见问题答疑</font></mark>
+</summary>
+	
 * Q：如何下载安装 android app？<br>
   >> 1、用android手机浏览器打开 https://github.com/lazy-luo/smarGate/raw/master/app-release.apk <br>
   >> 2、弹出框中下载安装 <br>
@@ -288,7 +347,9 @@
    ![ipv6 p2p](https://github.com/lazy-luo/smarGate/blob/master/res/ipv6p2p.png)<br>
    >> A:自定义路由标识为：<br>
    ![userdefineproxyer p2p](https://github.com/lazy-luo/smarGate/blob/master/res/userdefineproxyer.png)<br>
-   
+
+</details>
+
 ## 最佳实践<br>  
 * 以下为推荐使用的最佳实践，供参考：<br> 
   1、android客户端设置为“自动登录”，免除每次输入用户名/密码的麻烦;<br> 
