@@ -237,8 +237,7 @@
 	<mark><font size=5 color=darkred>展开图示</font></mark>
 </summary>
 <img src="https://github.com/lazy-luo/smarGate/blob/master/res/login.png" /><br>
-<img src="https://github.com/lazy-luo/smarGate/blob/master/res/register.png" /><br>
-<img src="https://github.com/lazy-luo/smarGate/blob/master/res/registerok.png" /><br>
+<img src="https://github.com/lazy-luo/smarGate/blob/master/res/reg.png" /><br>
 </details>
 
 ### 2、下载服务端 && 配置
@@ -285,9 +284,9 @@
 <summary>
 	<mark><font size=5 color=darkred>展开图示</font></mark>
 </summary>
-<img src="https://github.com/lazy-luo/smarGate/blob/master/res/oper2.png" /><br>
-<b>配置中的“远程ip”为“访问点”对应内网中的某台主机ip（localhost或127.0.0.1代表内网server端所在机器本身）</b>
-<img src="https://github.com/lazy-luo/smarGate/blob/master/res/oper3.png" /><br>
+<img src="https://github.com/lazy-luo/smarGate/blob/master/res/proxy.png" /><br>
+<b>服务端间端口映射配置需要在ip后加上服务端index序号，格式为：ip@idx</b>
+<img src="https://github.com/lazy-luo/smarGate/blob/master/res/server-proxy.png" /><br>
 </details>
 
 ### 5、电脑或手机可以直接访问手机客户端设置的服务（如ssh、http等）<br>
