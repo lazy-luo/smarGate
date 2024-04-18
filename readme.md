@@ -376,6 +376,10 @@ ps：捐赠建议附上注册用户名<br>
 	<mark><font size=5 color=darkred>更新历史</font></mark>
 </summary>
 
+### 2024-04-18：<br>
+1、收藏夹BUG修复<br>
+2、新增服务备注功能，便于服务识别及打标<br>
+  
 ### 2024-04-10：<br>
 1、VIP支持百度地图定位<br>
 * APP服务端支持GPS定位
