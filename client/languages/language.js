@@ -22,12 +22,12 @@ var g_languages = [
     ,"姓名"//20
     ,"联系电话"//21
     ,"邮箱"//22
-    ,"同意协议"//23
+    ,"用户协议"//23
     ,"必须填写邀请码"//24
     ,"描述"//25
     ,"基础信息"//26
-    ,"发送"//27
-    ,"接收"//28
+    ,"发送 ↑ "//27
+    ,"接收 ↓ "//28
     ,"总内存"//29
     ,"已用内存"//30
     ,"内存峰值"//31
@@ -35,12 +35,12 @@ var g_languages = [
     ,"在线"//33
     ,"离线"//34
     ,"系统状态"//35
-    ,"工作线程数"//36
-    ,"空闲线程数"//37
-    ,"最大连接数"//38
-    ,"当前连接数"//39
-    ,"待处理事件"//40
-    ,"检测线程数"//41
+    ,"工作线程"//36
+    ,"空闲线程"//37
+    ,"最大连接"//38
+    ,"当前连接"//39
+    ,"等待事件"//40
+    ,"检测线程"//41
     ,"服务集合"//42
     ,"本地端口"//43
     ,"路由指向"//44
@@ -130,6 +130,63 @@ var g_languages = [
     ,"已发送定位请求..." //128
     ,"定位请求失败" //129
     ,"已成功获取定位信息" //130
+    ,"请输入账号"//131
+    ,"请输入密码"//132
+    ,"账号最短为 5 个字符"//133
+    ,"密码长度至少为 6 个字符"//134
+    ,"邀请码必须输入数字，且不为0"//135
+    ,"邮箱地址格式错误"//136
+    ,"请输入邀请码"//137
+    ,"请确认密码"//138
+    ,"请输入电话号码"//139
+    ,"请输入邮箱"//140
+    ,"注册成功后，请于2小时内完成首次登录，用户名、密码请妥善保管，用户相关数据仅存储于本地。"//141
+    ,"密码两次输入不一致"//142
+    ,"设置"//143
+    ,"左滑可以打开设置"//144
+    ,"设置完成后，即时生效，你可以右滑返回"//145
+    ,"语言选择"//146
+    ,"常用设置"//147
+    ,"高级设置"//148
+    ,"操作确认"//149
+    ,"确认删除该条收藏记录？"//150
+    ,"系统免费用户"//151
+    ,"确认删除该条代理记录？"//152
+    ,"添加映射配置"//153
+    ,"注意：请仔细核对，如输入序列号错误，须等待半小时才能继续注册"//154
+    ,"下拉可以刷新"//155
+    ,"释放立即刷新"//156
+    ,"正在刷新..."//157
+    ,"提示信息"//158
+    ,"错误信息"//159
+    ,"常用收藏"//160
+    ,"为常用连接提供收藏"//161
+    ,"请输入收藏标题"//162
+    ,"加入收藏"//163
+    ,"文件传输功能只能在P2P或自定义代理生效时使用"//164
+    ,"您暂时没有此功能权限"//165
+    ,"目标文件夹"//166
+    ,"当前文件夹"//167
+    ,"任务区"//168
+    ,"可点击切换文件主机"//169
+    ,"刷新操作需要30秒间隔"//170
+    ,"操作失败，条目可能已添加" //171
+    ,"是否切换为服务端模式？"//172
+    ,"切换服务端/客户端模式后，需要重启APP才能生效！" //173
+    ,"请输入姓名"//174
+    ,"请间隔30秒后再试！"//175
+    ,"新用户注册失败！"//176
+    ,"网络太慢，数据加载超时！"//177
+    ,"确认删除当前选中文件？"//178
+    ,"确认传输当前选中文件？"//179
+    ,"玩命加载中..."//180
+    ,"请自行申请百度地图浏览器版AK。如首次使用地图，请在配置中设置AK"//181
+    ,"AK码设置"//182
+    ,"请输入百度地图浏览器版AK码"//183
+    ,"地图"//184
+    ,"描述"//185
+    ,"备注设置"//186
+    ,"请输入服务简短备注"//187
     ],
     ["English"
     , "OK" //1
@@ -149,17 +206,17 @@ var g_languages = [
     , "Password" //15
     , "Auto login" //16
     , "User registration" //17
-    , "Invitation code" //18
-    , "Confirm password" //19
+    , "Invitation NO" //18
+    , "Confirm" //19
     , "Name" //20
-    , "Contact number" //21
+    , "Phone NO" //21
     , "Mailbox" //22
-    , "Agreement of consent" //23
+    , "User Agreement" //23
     , "Invitation code must be filled in" //24
     , "Desc" //25
     , "Info" //26
-    , "SND" //27
-    , "RX" //28
+    , "SND ↑ " //27
+    , "RX ↓ " //28
     , "Tot-mem" //29
     , "Usage" //30
     , "Max-usage" //31
@@ -167,12 +224,12 @@ var g_languages = [
     , "Online" //33
     , "Offline" //34
     , "Summery" //35
-    , "Tot-threads" //36
-    , "Idle threads" //37
+    , "Workers" //36
+    , "Idles" //37
     , "Max-sockets" //38
     , "Connections" //39
-    , "Pending event" //40
-    , "Event threads" //41
+    , "Pending" //40
+    , "Products" //41
     , "Services" //42
     , "Local port" //43
     , "Routing to" //44
@@ -193,8 +250,8 @@ var g_languages = [
     , "No need specified by default..." //59
     , "The access point number must be entered and is an integer of <64" //60
     , "Change password" //61
-    , "Old password" //62
-    , "New password" //63
+    , "Older" //62
+    , "Newer" //63
     , "Congratulations: registration request is successful. Please keep your service ID properly" //64
     , "Login failed. Please verify the user name password you entered!"// 65
     , "Logging in..." //66
@@ -248,7 +305,7 @@ var g_languages = [
     , "User proxy IP:port..."//114
     , "Access token"//115
     , "Token of proxy server..."//116
-    , "SSL option for P2P" //117
+    , "SSL for P2P" //117
     , "none"//118
     , "first"//119
     , "only"//120
@@ -262,5 +319,62 @@ var g_languages = [
     , "Location request has been sent..." //128
     , "Location request failed" //129
     , "Successfully obtained location information" //130
+    , "Please enter your account"//131
+    , "Please enter password"//132
+    , "The minimum account length is 5 characters"//133
+    , "The password length should be at least 6 characters"//134
+    , "The invitation code must be entered as a number and not 0"//135
+    , "Email address format error"//136
+    , "Please enter the invitation code"//137
+    , "Please confirm password"//138
+    , "Please enter a phone number"//139
+    , "Please enter your email address"//140
+    , "After successful registration, please complete the first login within 2 hours. Please keep your username and password properly, and user related data is only stored locally."//141
+    , "The password entered twice is inconsistent"//142
+    , "Setting"//143
+    , "Left swipe to open settings"//144
+    , "After setting up, you can slide right to return"//145
+    , "Language "//146
+    , "Common Settings"//147
+    , "Advanced Setting"//148
+    , "Operate Confirm"//149
+    , "Are you sure to delete this favorite record?"//150
+    , "You are free users"//151
+    , "Confirm deleting the proxy record?"//152
+    , "Add mapping configuration" //153
+    , "Attention: Please check carefully. If you enter the wrong serial number, you will need to wait for half an hour before continuing to register"//154
+    , "Dropdown can refresh"//155
+    , "Release and refresh immediately"//156
+    , "Refreshing..."//157
+    , "Information"//158
+    , "Error"//159
+    , "Favorites"//160
+    , "Provide favorites for commonly used connections"//161
+    , "Please enter the bookmark title"//162
+    , "Add to favorites"//163
+    , "The file transfer function can only be used when P2P or custom proxies are in effect"//164
+    , "You currently do not have permission for this feature"//165
+    , "Destination Folder"//166
+    , "Current Folder"//167
+    , "Mission Area"//168
+    , "Click to switch file hosts"//169
+    , "The refresh operation requires a 30 second interval"//170
+    , "Operation failed, entry may have been added"//171
+    , "Switch to server-side mode?"//172
+    , "After switching between server/client mode, you need to restart the app to take effect!"//173
+    , "Please enter your name"//174
+    , "Please try again after a 30 second interval"//175
+    , "New user registration failed！"//176
+    , "The network is too slow, data loading timed out!"//177
+    , "Confirm deleting the currently selected file？"//178
+    , "Confirm the transfer of the currently selected file？"//179
+    , "Loading..."//180
+    , "Please apply for Baidu Map Browser version AK by yourself. If using the map for the first time, please set AK in the configuration"//181
+    , "AK code setting"//182
+    , "Enter AK code of the Baidu Map"//183
+    , "Map"//184
+    , "MEMO"//185
+    , "Notes modify"//186
+    , "Enter notes of the services"//187
     ]
   ];
