@@ -376,6 +376,10 @@ ps：捐赠建议附上注册用户名<br>
 	<mark><font size=5 color=darkred>更新历史</font></mark>
 </summary>
 
+### 2024-07-11<br>
+1、修复代理地址错误显示为localhost的BUG<br>
+2、修复windows下偶发coredump的BUG<br>
+
 ### 2024-05-11<br>
 1、启用异步连接，防止慢连接阻塞正常连接<br>
 2、修复链式代理、Socks5、http代理在特定情况下无法释放连接的BUG<br>
