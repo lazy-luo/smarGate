@@ -376,9 +376,11 @@ ps：捐赠建议附上注册用户名<br>
 	<mark><font size=5 color=darkred>更新历史</font></mark>
 </summary>
 
-### 2024-08-06<br>
+### 2024-08-06更新到v0.40.3<br>
 1、修复windows下代理连接偶发断开的BUG<br>
-2、版本保持不变<br>
+2、修复windows下低带宽时高CPU占用的BUG<br>
+3、服务端支持动态资源回收，适合内存限制设备<br>
+4、版本更新到v0.40.3<br>
 
 ### 2024-07-11<br>
 1、修复代理地址错误显示为localhost的BUG<br>
