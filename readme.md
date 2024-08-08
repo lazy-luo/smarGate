@@ -51,8 +51,8 @@
 
 # 
 ## 快速概览<a href=https://github.com/lazy-luo/smarGate/wiki/快速上手手册>【快速上手手册】</a> <a href="https://www.bilibili.com/video/BV1LM411k7Rf">【三方视频教学- B站】</a><br>
-* 平台适配，支持linux、windows、macos、android、（tob，小型机：hp-unix、solaris、AIX）<br>
-* cpu架构，支持x86、arm、mips、riscv（tob：alpha、PowerPC、SPRAC）<br>
+* 平台适配，支持linux、windows、macos、android（tob，小型机：hp-unix、solaris、AIX）<br>
+* cpu架构，支持x86、arm、mips、riscv、LoongArch64（tob：alpha、PowerPC、SPRAC）<br>
 * 注重安全，“内网”到“内网”的穿透，无需映射任何端口到外网，不更改任何防火墙配置<br>
 * 注重带宽，”4G手机+v6宽带“采用P2P方式访问内网服务（基于TCP协议，v4支持NAT1-3穿透）<br>
 * 注重节约，无需购买vps、无需公网IP；家中淘汰Android手机可做服务器<br>
