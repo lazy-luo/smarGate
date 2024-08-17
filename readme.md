@@ -376,6 +376,10 @@ ps：捐赠建议附上注册用户名<br>
 	<mark><font size=5 color=darkred>更新历史</font></mark>
 </summary>
 
+### 2024-08-17<br>
+1、修复网络出口变化时服务端长时间丢失的BUG<br>
+2、改进P2P连接机制，提升P2P连接成功率<br>
+
 ### 2024-08-06更新到v0.40.3<br>
 1、修复windows下代理连接偶发断开的BUG<br>
 2、修复windows下低带宽时高CPU占用的BUG<br>
