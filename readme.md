@@ -379,6 +379,17 @@ ps：捐赠建议附上注册用户名<br>
 ### 2024-10-12更新到v0.40.4：<br>
 1、新增PROXY协议，单端口同时支持socks5及http代理<br>
 2、新增http代理用户/密码认证<br>
+
+```
+<app-parameter>
+	...
+	<httpx-user value="user" />
+	<httpx-passwd value="pwd" />
+	<socks-user value="user" />
+	<socks-passwd value="pwd" />
+	...
+</app-parameter>
+```
 3、其它优化<br>
 
 ### 2024-08-20<br>
