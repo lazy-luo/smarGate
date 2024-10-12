@@ -376,6 +376,11 @@ ps：捐赠建议附上注册用户名<br>
 	<mark><font size=5 color=darkred>更新历史</font></mark>
 </summary>
 
+### 2024-10-12更新到v0.40.4：<br>
+1、新增PROXY协议，单端口同时支持socks5及http代理<br>
+2、新增http代理用户/密码认证<br>
+3、其它优化<br>
+
 ### 2024-08-20<br>
 1、提升文件传输速度<br>
 2、其它优化<br>
