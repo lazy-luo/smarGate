@@ -375,6 +375,10 @@ ps：捐赠建议附上注册用户名<br>
 <summary>
 	<mark><font size=5 color=darkred>更新历史</font></mark>
 </summary>
+	
+### 2025-03-25<br>
+1、文件管理新增空目录删除功能<br>
+2、增强稳定性，修复异常退出问题<br>
 
 ### 2024-10-12更新到v0.40.4：<br>
 1、新增PROXY协议，单端口同时支持socks5及http代理<br>
