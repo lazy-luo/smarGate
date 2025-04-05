@@ -187,6 +187,16 @@ var g_languages = [
     ,"描述"//185
     ,"备注设置"//186
     ,"请输入服务简短备注"//187
+    ,"设置[电池优化]"//188
+    ,"设置后台[无限制]"//189
+    ,"关闭应用速冻"//190
+    ,"允许后台高耗电"//191
+    ,"前往[电池优化]-[应用名称]，设置[不允许]"//192
+    ,"设置MIUI系统后台配置为[无限制]"//193
+    ,"前往[电池]-[应用名称]，关闭[后台冻结]和[检测到异常时自动优化]"//194
+    ,"前往[电池]-[后台耗电管理]-[应用名称]，设置[允许后台高耗电]"//195
+    ,"跳转设置失败"//196
+    ,"未知机型，请自行设置后台运行权限"//197
     ],
     ["English"
     , "OK" //1
@@ -376,5 +386,15 @@ var g_languages = [
     , "MEMO"//185
     , "Notes modify"//186
     , "Enter notes of the services"//187
+    , "Settings [Battery Optimization]"//188
+    , "Set up background [unlimited]"//189
+    , "Close application quick freeze"//190
+    , "Allow high power consumption in the background"//191
+    , "Go to [Battery Optimization]-[App Name] and set [Not Allowed]"//192
+    , "Set the MIUI system background configuration to [Unlimited]"//193
+    , "Go to [Battery]-[App Name], turn off [Background Freeze] and [Automatic Optimization when Abnormality Detected]"//194
+    , "Go to [Battery]-[Background Power Consumption Management]-[App Name] and set [Allow background high power consumption]"//195
+    , "Load setting failed"//196
+    , "Unknown model, please set background running permissions yourself"//197
     ]
   ];
