@@ -379,7 +379,25 @@ ps：捐赠建议附上注册用户名<br>
 ### 2025-09-26更新到v0.40.5<br><br>
 1、解决代理模式下连接概率性断开的BUG<br>
 2、增强稳定性，提升性能<br>
-3、版本更新到v0.40.5<br>
+3、增加开机自启动脚本，使用方式如下：<br>
+* windows
+```
+windows下，确保 enable_autostart.bat 和 enable_autostart.ps1 文件与服务端在同一个目录
+打开cmd窗口，开启自启动输入:
+enable_autostart.bat on
+关闭自启动输入:
+enable_autostart.bat off
+过程中要求脚本以管理员方式运行
+```
+* linux/macOS
+```
+确保 enable_autostart.sh 文件与服务端在同一个目录
+开启自启动输入:
+enable_autostart.sh on
+关闭自启动输入:
+enable_autostart.sh off
+```
+4、版本更新到v0.40.5<br>
 
 ### 2025-03-25<br>
 1、文件管理新增空目录删除功能<br>
@@ -723,4 +741,5 @@ ps：捐赠建议附上注册用户名<br>
 【重要提示】v0.14版本将于之前版本不兼容，请务必更新版本！！！<br>
 ### ....初始版本v0.13<br>
 </details>
+
 
