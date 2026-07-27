@@ -37,10 +37,33 @@
 * Exposing intranet services when you have a public IP
 * ......
 
+## SG Version Guide   
+
+  Android provides two build variants (Product Flavors), **Base** and **Advance**, sharing the same codebase and     
+  differentiated through compile-time feature toggles + R8 dead code elimination:
+                                                                                                                     
+  | Feature | Base | Advance |                                                                                       
+  |------|:----:|:-------:|
+  | Proxy Tunnel | ✓ | ✓ |                                                                                           
+  | File Management | ✓ | ✓ |                                                                                        
+  | Audio Capture/Transmission | ✗ | ✓ |                                                                             
+  | GPS Location Tracking | ✗ | ✓ |                                                                                  
+  | App Upgrade | ✗ | ✓ |                                                                                            
+  | Screen/Camera Monitoring | ✗ | ✗ |                                                                               
+                                                                                                                     
+  - **Base** — Lightweight edition. Retains only core proxy tunneling and file management, stripping out             
+  high-permission/high-risk modules such as audio, location, upgrade, and monitoring. Smaller APK size with fewer    
+  permissions, ideal for users who only need basic proxy and file access.                                            
+  - **Advance** — Full-featured edition. Includes all feature modules except monitoring, supporting remote audio,
+  location tracking, app upgrade, and other advanced capabilities. Suitable for users who require complete remote    
+  management functionality.
+    * Huawei phones may flag the Advance version as a "fraud app" by default. To install, first disable Pure Mode,   
+  then enable Airplane Mode on the phone before installing. For similar issues on other phone brands, search for     
+  solutions online.
+
 ## How to Use SG?
 
 * Download the app and register
-  * Since the app is not listed on app stores, Huawei phones may flag it as a "fraudulent app" by default — you must first disable "Pure Mode", then enable "Airplane Mode" before installation. For similar issues on other phones, search for solutions online.
 * Download the appropriate server version, configure it with your User ID, and run it
 * Log into the app and configure port mapping rules
 * Use the configured mappings to access your services
