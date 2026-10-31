@@ -9,6 +9,12 @@
   * Perform file management operations on both the mobile device and server endpoints
 * A simple SOCKS proxy tool
 * A simple HTTP(S) proxy tool
+* A remote desktop tool
+  * Real-time viewing and control of phone/computer desktops, with browser viewing without installation
+* A screen casting tool
+  * Cast your phone screen to local or remote TVs via DLNA/AirPlay
+* A group sharing and resource marketplace tool
+  * Share service mappings within groups; list service resources on the marketplace
 * ......
 
 ## Key Features
@@ -28,6 +34,14 @@
 * SOCKS and HTTP(S) proxy support custom IP whitelists and domain whitelists, including CIDR IP ranges and domain wildcards
 * Supports both TCP and UDP protocols
   * UDP uses UDP-over-TCP mode
+* Supports remote desktop
+  * Native client and browser viewing without installation; synchronized server system audio; keyboard/mouse, touch, clipboard, recording and playback
+* Supports DLNA/AirPlay casting
+  * Cast your phone screen to local or remote TVs, with playback control and screen mirroring
+* Supports group sharing
+  * Join groups via invite code/link; member and permission management; shared service mappings within groups
+* Supports resource marketplace
+  * List service resources; group-only or public visibility; lease durations and re-listing
 * ......
 
 ## What Problems Does SG Solve?
@@ -49,7 +63,9 @@
   | Audio Capture/Transmission | ✗ | ✓ |                                                                             
   | GPS Location Tracking | ✗ | ✓ |                                                                                  
   | App Upgrade | ✗ | ✓ |                                                                                            
-  | Screen/Camera Monitoring | ✗ | ✗ |                                                                               
+  | Screen/Camera Monitoring | ✗ | ✗ |
+  | Remote Desktop | ✗ | ✓ |
+  | Casting (DLNA/AirPlay) | ✗ | ✓ |                                                                               
                                                                                                                      
   - **Base** — Lightweight edition. Retains only core proxy tunneling and file management, stripping out             
   high-permission/high-risk modules such as audio, location, upgrade, and monitoring. Smaller APK size with fewer    
@@ -246,6 +262,23 @@
 22. SOCKS5 and HTTP proxy support domain and IP whitelists (v0.32.1+)
   — Domain whitelist supports four match modes (exact, prefix, suffix, substring), default config file: .white_list
   — IP whitelist supports CIDR-format IP range configuration, default config file: .ipchecks
+23. Remote desktop support (v0.41.3+)
+  — Real-time viewing and control of phone/computer desktops, with H.264 hardware decoding and low latency
+  — Keyboard/mouse and touch input, two-way clipboard sync, session recording and playback
+  — Browser viewing without installation (WebCodecs hardware decoding, Broadway software fallback), with multiple simultaneous viewers
+24. Synchronized server system audio
+  — Plays server system audio during remote desktop sessions, with mute and audio quality presets
+25. DLNA/UPnP casting
+  — Automatically discovers LAN DLNA TVs/players; casts images, videos and mirrored streams, with play/pause/seek/volume control
+26. AirPlay screen mirroring
+  — Mirrors your phone screen to AirPlay-capable TVs/receivers
+27. Cast your phone screen to local or remote TVs
+  — Built-in HTTP server for browser viewing; live-edge joining and catch-up after falling behind, with low latency
+28. Group sharing (v0.41.3+)
+  — Create/join groups with a one-time invite code or invite link; member and permission management
+  — Share service mappings within a group; automatic selection of P2P, custom proxy or official proxy for group traffic, with group-level authorization
+29. Resource marketplace
+  — List service resources on the marketplace, with group-only or public visibility, lease durations and re-listing after expiry
 ...to be continued
 
 ```
@@ -319,6 +352,47 @@
 </details>
 
 ### 5. Computers or Phones Can Access Services Configured on the Mobile Client (e.g., SSH, HTTP, etc.)<br>
+
+### 6. Remote Desktop Server Dependencies & Setup Scripts (Optional)<br>
+* Required only by the C++ server (`proxy_server`). When the Android app itself runs as a server, it encodes with the system MediaCodec and needs no extra dependencies.<br>
+* Remote desktop requires:<br>
+>> 1. FFmpeg: `libavutil` / `libavcodec` / `libswscale`, built with the **libx264** encoder<br>
+>> 2. OpenSSL: `libssl` / `libcrypto`<br>
+* Without these the server still proxies normally; it just does not advertise remote desktop (clients show no RD entry).<br>
+
+**Linux / macOS**<br>
+The release package ships `setup_rd_deps.sh` next to `proxy_server` and `conf-proxy.xml`:<br>
+
+```sh
+# Detect/install missing deps, stage the runtime libs into <conf dir>/shared/lib,
+# and write their absolute paths into conf-proxy.xml
+./setup_rd_deps.sh
+# Use a specific config file
+./setup_rd_deps.sh --conf /path/to/conf-proxy.xml
+# Detect and configure only; never touch the system
+./setup_rd_deps.sh --no-install
+# Provide library paths explicitly (skip auto-detection)
+./setup_rd_deps.sh --set-libs "libavcodec=/x/libavcodec.so;libssl=/x/libssl.so"
+```
+
+* The script writes `<libavutil>`, `<libavcodec>`, `<libswscale>`, `<libssl>` and `<libcrypto>` into `<app-parameter>` of `conf-proxy.xml`.<br>
+* On macOS, also grant **Screen Recording** permission to the process running `proxy_server` (System Settings → Privacy & Security → Screen Recording); otherwise capture comes back black and RD capability is withheld.<br>
+* On Linux the server must run inside a graphical session (X11/Wayland). On a headless host remote desktop cannot work, so the script skips FFmpeg (configures OpenSSL only) and exits normally.<br>
+
+**Windows**<br>
+The release package ships `setup_rd_deps.ps1`:<br>
+
+```powershell
+powershell -ExecutionPolicy Bypass -File setup_rd_deps.ps1
+powershell -ExecutionPolicy Bypass -File setup_rd_deps.ps1 -Conf C:\path\conf-proxy.xml
+powershell -ExecutionPolicy Bypass -File setup_rd_deps.ps1 -NoInstall
+```
+
+* The FFmpeg build must match the **server's** bitness (the shipped server is 32-bit x86 or ARM64, not x64). The script reads it from `proxy_server.exe`'s PE header; override with `-ServerExe` or `-Arch x86|arm64`. A mismatched DLL fails at runtime with LoadLibrary error 193.<br>
+* When downloads are blocked, use `-FfmpegZip <zip>`, `-FfmpegUrl <url>`, `-Mirror https://ghproxy.net/`, `-Proxy http://127.0.0.1:7890`, `-Sha256 <hex>`.<br>
+* On Windows the capture runs in `sg_rd_agent.exe`, which ships with the package and must sit next to `proxy_server.exe`. In the Windows service (Session 0) deployment the server launches it into the active user session automatically — no separate installation needed.<br>
+
+* Exit codes: `0` all libs resolved, libx264 verified, config written; `1` missing dependency or config write failed; `2` config written but libx264 could not be confirmed.<br>
 
 </details>
 
@@ -406,6 +480,39 @@ PS: It is recommended to include your registered username with the donation.<br>
 <summary>
 <mark><font size=5 color=darkred>Changelog</font></mark>
 </summary>
+
+### 2026-10-31 — Updated to v0.41.3<br>
+1. Added Remote Desktop:<br>
+- Real-time viewing and control of phone/computer desktops with H.264 hardware decoding and low latency
+- Browser viewing without installation (WebCodecs hardware decoding, Broadway software fallback), with support for multiple simultaneous viewers
+- Synchronized playback of server system audio, with mute and audio quality presets
+- Keyboard/mouse and touch input, two-way clipboard sync, session recording and playback
+- Publish local or remote desktops
+
+2. Added Screen Casting:<br>
+- DLNA/UPnP: automatically discover LAN TVs/players; cast images, videos and mirrored streams
+- AirPlay: mirror your phone screen to AirPlay TVs/receivers
+- Cast your phone screen to local or remote TVs; built-in HTTP server for browser viewing
+- Play/pause/seek/volume control
+- Lower latency and smoother casting: live-edge joining, catch-up after falling behind, static-frame keep-alive; fixed black screens and artifacts
+
+3. Added Group Sharing:<br>
+- Create/join groups with a one-time invite code or one-click invite link
+- Share service mappings within a group, with member and permission management
+- Automatic selection of P2P, custom proxy or official proxy for group traffic, with group-level authorization
+
+4. Added Model Marketplace (Resource Marketplace):<br>
+- List service resources on the marketplace, visible to group members only or public
+- Lease durations from hourly/daily/yearly to permanent; re-list after expiry
+- Search, view details and request access
+
+5. Network engine and stability improvements:<br>
+- Multi-channel tunnels with per-channel QoS; improved egress backpressure and congestion control
+- Improved P2P negotiation and re-rendezvous after failure, increasing connection success rate
+- Fixed artifacts, freezing, A/V desync and high latency in remote desktop and casting
+- Other bug fixes and performance improvements
+
+6. Version updated to v0.41.3<br>
 
 ### 2026-07-24 — Updated to v0.41.1<br>
 1. Added three new service display layouts, switchable via the top toolbar with one click:<br>
