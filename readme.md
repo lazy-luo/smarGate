@@ -277,7 +277,7 @@ Android 提供 **Base** 和 **Advance** 两个构建变体（Product Flavor）�
 <a href="https://www.baidu.com/s?wd=smargate%20内网穿透">使用实践-度娘</a><br><br>
 <a href="https://www.google.com/search?q=smargate+内网穿透">使用实践-google</a>
 ### 1、下载app && 注册新用户
-* 下载android app（app-release.apk包含客户端和服务端）支持armv7及arm64 cpu架构<br>
+* 下载android app（app-advance-release.apk包含客户端和服务端）支持armv7及arm64 cpu架构<br>
 * 注册新用户（邀请码必填，为数字，可任意填。ps：如果必填信息未填完整,或包含中文字符，会注册失败）<br>
 * 注册成功后请务必记住返回的服务ID(N) 【重要】：注册成功后务必在1小时内完成首次登录<br>
 <details>
@@ -397,7 +397,7 @@ powershell -ExecutionPolicy Bypass -File setup_rd_deps.ps1 -NoInstall
 </summary>
 	
 * Q：如何下载安装 android app？<br>
-  >> 1、用android手机浏览器打开 https://github.com/lazy-luo/smarGate/raw/master/app-release.apk <br>
+  >> 1、用android手机浏览器打开 https://github.com/lazy-luo/smarGate/raw/master/app-advance-release.apk <br>
   >> 2、弹出框中下载安装 <br>
   >> 网盘链接为最新测试版本，github上版本稍有滞后 <br>
   >> 附网盘下载地址： https://pan.baidu.com/s/14Iq60kxHW711NVoCVKWySg <br>
