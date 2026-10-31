@@ -10,6 +10,12 @@
   * 可对手机及服务端所在服务器进行文件管理操作
 * 是个简单的socks代理工具
 * 是个简单的http(s)代理工具
+* 是个远程桌面工具
+  * 手机/电脑桌面实时查看与操作，支持浏览器免安装观看
+* 是个屏幕投屏工具
+  * 支持 DLNA/AirPlay，将手机屏幕投到本地或远程电视
+* 是个群组共享与资源市场工具
+  * 群组内共享服务映射，服务资源可上架市场
 * ......
 
 ## SG有什么特点？
@@ -28,6 +34,14 @@
 * socks及http(s)代理支持自定义ip白名单及域名白名单，支持CIDR格式IP段及域名统配符
 * 支持TCP协议服务，也支持UDP协议
   * UDP采用UDP over TCP模式
+* 支持远程桌面
+  * 原生客户端与浏览器免安装观看，同步播放服务端系统声音，支持键鼠/触控、剪贴板、录制回放
+* 支持DLNA/AirPlay投屏
+  * 将手机屏幕投到本地或远程电视，支持播控与镜像投屏
+* 支持群组分享
+  * 邀请码/链接入组，成员与权限管理，组内共享服务映射
+* 支持资源市场
+  * 服务资源上架、群组专享或公开、有效期与重新上架
 * ......
 
 ## SG能解决什么问题？
@@ -46,6 +60,8 @@ Android 提供 **Base** 和 **Advance** 两个构建变体（Product Flavor）�
 | GPS 定位追踪 | ✗ | ✓ |                                                                                           
 | 应用升级 | ✗ | ✓ |                                                                                               
 | 屏幕/摄像头监控 | ✗ | ✗ |
+| 远程桌面 | ✗ | ✓ |
+| 投屏（DLNA/AirPlay） | ✗ | ✓ |
 
 - **Base** — 轻量版。仅保留核心代理隧道和文件管理，裁剪掉音频、定位、升级、监控等高权限/高风险功能模块。APK体积更小，权限更少，适合只需基础代理和文件访问的用户。
 - **Advance** — 完整版。包含除监控外的全部功能模块，支持远程音频、位置追踪、应用升级等高级特性。适合需要完整远程管理能力的用户。
@@ -234,6 +250,23 @@ Android 提供 **Base** 和 **Advance** 两个构建变体（Product Flavor）�
 22、socks5、http代理支持域名和IP白名单（version >= v0.32.1）
 	。域名白名单支持四种模式匹配(完全匹配、向前匹配、向后匹配、中间匹配)，默认配置文件名.white_list
 	。IP白名单支持CIDR格式ip-range配置，默认配置文件名.ipchecks
+23、支持远程桌面（version >= v0.41.3）
+	。实时查看并操作手机/电脑桌面，H.264硬件解码，低延迟
+	。支持键鼠/触控输入、剪贴板双向同步、会话录制与回放
+	。支持浏览器免安装观看（WebCodecs硬解，Broadway软解回退），可多客户端同时观看
+24、支持服务端系统声音同步传输
+	。远程桌面会话中同步播放服务端系统声音，支持静音及音质档位选择
+25、支持DLNA/UPnP投屏
+	。自动搜索局域网DLNA电视/播放器，支持图片、视频及镜像流投屏，支持播放/暂停/进度/音量控制
+26、支持AirPlay镜像投屏
+	。将手机屏幕镜像到支持AirPlay的电视/接收器
+27、支持手机屏幕投到本地及远程电视
+	。内置HTTP服务，可用浏览器直接观看；支持直播边缘加入与落后追赶，低时延
+28、支持群组分享（version >= v0.41.3）
+	。创建/加入群组，一次性邀请码或邀请链接一键加入；支持成员与权限管理
+	。群组内可共享服务映射，组内数据自动选择P2P、自定义代理或官方代理，支持组级授权
+29、支持资源市场
+	。服务资源可上架市场，支持群组专享或公开、按有效期上架及到期重新上架
 。。。待续
 	
 ```
@@ -305,6 +338,46 @@ Android 提供 **Base** 和 **Advance** 两个构建变体（Product Flavor）�
 </details>
 
 ### 5、电脑或手机可以直接访问手机客户端设置的服务（如ssh、http等）<br>
+
+### 6、远程桌面服务端依赖与安装脚本（可选）<br>
+* 仅 C++ 服务端（proxy_server）需要；Android app 内开启“服务端”时使用系统 MediaCodec 编码，无需额外依赖。<br>
+* 远程桌面所需的运行库:<br>
+>> 1、FFmpeg：libavutil / libavcodec / libswscale，且必须包含 libx264 编码器<br>
+>> 2、OpenSSL：libssl / libcrypto<br>
+* 缺少依赖时服务端仍可正常代理，只是不广播远程桌面能力（客户端看不到远程桌面入口）。<br>
+
+**Linux / macOS**<br>
+发布包内已附带 `setup_rd_deps.sh`（与 proxy_server、conf-proxy.xml 同目录）：<br>
+
+```sh
+# 自动检测并安装缺失依赖，把运行库复制到 <conf目录>/shared/lib，并写入 conf-proxy.xml
+./setup_rd_deps.sh
+# 指定配置文件
+./setup_rd_deps.sh --conf /path/to/conf-proxy.xml
+# 只检测和写配置、不改动系统
+./setup_rd_deps.sh --no-install
+# 手工指定库路径（不走自动检测）
+./setup_rd_deps.sh --set-libs "libavcodec=/x/libavcodec.so;libssl=/x/libssl.so"
+```
+
+* 脚本会在 conf-proxy.xml 的 `<app-parameter>` 中写入 `<libavutil>`、`<libavcodec>`、`<libswscale>`、`<libssl>`、`<libcrypto>` 五个键。<br>
+* macOS 还需为运行 proxy_server 的进程授予“屏幕录制”权限（系统设置 → 隐私与安全性 → 屏幕录制），否则采集为黑屏、服务端不广播远程桌面能力。<br>
+* Linux 必须在图形会话（X11/Wayland）下运行；无图形桌面的主机无法提供远程桌面，脚本会跳过 FFmpeg（仅配置 OpenSSL）并正常退出。<br>
+
+**Windows**<br>
+发布包内已附带 `setup_rd_deps.ps1`：<br>
+
+```powershell
+powershell -ExecutionPolicy Bypass -File setup_rd_deps.ps1
+powershell -ExecutionPolicy Bypass -File setup_rd_deps.ps1 -Conf C:\path\conf-proxy.xml
+powershell -ExecutionPolicy Bypass -File setup_rd_deps.ps1 -NoInstall
+```
+
+* FFmpeg 位数必须与服务端一致（服务端为 32 位 x86 或 ARM64，不是 x64）。脚本默认从 proxy_server.exe 的 PE 头判断，也可用 `-ServerExe` / `-Arch x86|arm64` 指定；位数不符会在运行时 LoadLibrary 失败（错误 193）。<br>
+* 网络受限时可使用本地包或镜像：`-FfmpegZip <zip>`、`-FfmpegUrl <url>`、`-Mirror https://ghproxy.net/`、`-Proxy http://127.0.0.1:7890`、`-Sha256 <hex>`。<br>
+* Windows 的远程桌面采集由 `sg_rd_agent.exe` 完成，发布包已自带，需与 `proxy_server.exe` 放在同一目录；以 Windows 服务（Session 0）方式部署时，服务端会自动将其启动到当前登录用户的会话，无需单独安装。<br>
+
+* 脚本退出码：`0` 依赖齐全、libx264 已验证、配置已写入；`1` 缺少依赖或写配置失败；`2` 配置已写入但未能确认 libx264。<br>
 
 </details>
 
@@ -390,6 +463,39 @@ ps：捐赠建议附上注册用户名<br>
 <summary>
 	<mark><font size=5 color=darkred>更新历史</font></mark>
 </summary>
+
+### 2026-10-31更新到v0.41.3<br>
+1、新增远程桌面功能<br>
+- 实时查看并操作手机/电脑桌面，H.264 硬件解码，低延迟<br>
+- 支持浏览器免安装观看（WebCodecs 硬件解码，Broadway 软件解码回退），可多客户端同时观看<br>
+- 同步播放服务端系统声音，支持静音与音质档位选择<br>
+- 支持键鼠/触控输入、剪贴板双向同步、会话录制与回放<br>
+- 支持发布本机或远端桌面<br>
+
+2、新增投屏功能<br>
+- DLNA/UPnP：自动搜索局域网电视/播放器，支持图片、视频及镜像流投屏<br>
+- AirPlay：支持将手机屏幕镜像到 AirPlay 电视/接收器<br>
+- 支持手机屏幕投到本地及远程电视，支持本机 HTTP 服务供浏览器观看<br>
+- 支持播放/暂停/进度/音量控制<br>
+- 优化投屏时延与流畅度：直播边缘加入、落后自动追赶、静止画面保活，修复黑屏/花屏<br>
+
+3、新增群组分享<br>
+- 支持创建/加入群组，一次性邀请码或邀请链接一键加入<br>
+- 群组内可共享服务映射，支持成员与权限管理<br>
+- 组内数据自动选择 P2P、自定义代理或官方代理，支持组级授权<br>
+
+4、新增模型市场（资源市场）<br>
+- 服务资源可上架市场，支持群组专享或公开<br>
+- 支持按小时/天/年/永久等有效期上架，到期可重新上架<br>
+- 支持搜索、详情查看与申请使用<br>
+
+5、网络引擎与稳定性优化<br>
+- 隧道多通道与每通道 QoS，优化出口背压与拥塞控制<br>
+- 优化 P2P 协商与失败重会合，提升连接成功率<br>
+- 修复远程桌面/投屏花屏、冻结、音画不同步及高时延问题<br>
+- 其它已知问题修复与性能优化<br>
+
+6、版本更新到v0.41.3<br>
 
 ### 2026-07-24更新到v0.41.1<br>                                                                    
 1、新增三种服务展示布局，顶部工具栏一键切换：<br>
@@ -772,6 +878,3 @@ enable_autostart.sh off
 【重要提示】v0.14版本将于之前版本不兼容，请务必更新版本！！！<br>
 ### ....初始版本v0.13<br>
 </details>
-
-
-
